@@ -7,12 +7,12 @@ export const cartReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case ADD_TO_CART:
-      return { ...state };
+      return [...state];
 
     case REMOVE_FROM_CART:
-      return { ...state };
+      return [...state];
 
     default:
-      return { ...state };
+      return [...state];
   }
 };
