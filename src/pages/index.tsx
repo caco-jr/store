@@ -1,9 +1,9 @@
 import { FunctionComponent } from 'react';
 import { GetStaticProps } from 'next';
 
-import Layout from '../components/Layout';
-import { getStoreAPI } from '../services/api';
-import { Store } from '../interfaces/index';
+import Layout from '@components/Layout';
+import { getStoreAPI } from '@services/api';
+import { Store } from '@interfaces/store';
 
 type Props = {
   store: Store;

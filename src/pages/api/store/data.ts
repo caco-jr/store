@@ -1,4 +1,4 @@
-import { Store } from '../../../interfaces/index';
+import { Store } from '@interfaces/store/index';
 
 export const storeData: Store = {
   products: [

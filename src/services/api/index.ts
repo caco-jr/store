@@ -1,4 +1,4 @@
-import { Store } from '../../interfaces';
+import { Store } from '@interfaces/store';
 
 let BASE_URI: string;
 
