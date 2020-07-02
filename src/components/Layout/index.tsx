@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-import Link from 'next/link';
 import Head from 'next/head';
 
 import '@styles/main.scss';
@@ -10,7 +9,7 @@ type Props = {
 };
 
 const Layout = ({ children, title = 'This is the default title' }: Props) => (
-  <div>
+  <>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
@@ -26,22 +25,8 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
       />
     </Head>
 
-    <header>
-      <nav>
-        <Link href="/">
-          <a>Home</a>
-        </Link>
-        | <a href="/api/store">Products API</a>
-      </nav>
-    </header>
-
-    {children}
-
-    <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
-    </footer>
-  </div>
+    <main>{children}</main>
+  </>
 );
 
 export default Layout;

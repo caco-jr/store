@@ -4,8 +4,16 @@ import '@testing-library/jest-dom/extend-expect';
 
 import Layout from '.';
 
-it('should render Header', () => {
-  const { getByText } = render(<Layout title="Ola" />);
+describe('LayoutComponent', () => {
+  it('Should render without crashing', () => {
+    const { container } = render(<Layout title="Layout Testing" />);
 
-  expect(getByText('Products API')).toBeInTheDocument();
+    expect(container).toBeInTheDocument();
+  });
+
+  it('Should have main tag', () => {
+    const { container } = render(<Layout title="Layout Testing" />);
+
+    expect(container.querySelector('main')).toBeInTheDocument();
+  });
 });
