@@ -15,7 +15,7 @@
     "noUnusedParameters": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "target": "esnext",
     "baseUrl": ".",
     "paths": {
@@ -24,7 +24,8 @@
       "@services/*": ["src/services/*"],
       "@styles/*": ["src/styles/*"],
       "@utils/*": ["src/utils/*"],
-      "@interfaces/*": ["src/interfaces/*"]
+      "@interfaces/*": ["src/interfaces/*"],
+      "@redux/*": ["src/redux/*"]
     }
   },
   "exclude": ["node_modules"],
