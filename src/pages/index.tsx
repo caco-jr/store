@@ -1,15 +1,28 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import { FunctionComponent } from 'react';
+import { GetStaticProps } from 'next';
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
+import Layout from '../components/Layout';
+import { getStoreAPI } from '../services/api';
+import { Store } from '../interfaces/index';
+
+type Props = {
+  store: Store;
+};
+
+const IndexPage: FunctionComponent<Props> = ({ store }) => (
+  <Layout title="Home">
+    <h1>{store.products[0].price}</h1>
   </Layout>
-)
+);
 
-export default IndexPage
+export const getStaticProps: GetStaticProps = async () => {
+  const response = await getStoreAPI();
+
+  return {
+    props: {
+      store: response,
+    },
+  };
+};
+
+export default IndexPage;
