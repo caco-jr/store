@@ -1,17 +1,21 @@
 import React, { FunctionComponent } from 'react';
 
-import { getPriceObject } from '@utils/price';
+import { getPriceObject, getPrettyPriceFormat } from '@utils/price';
 
 type Props = {
   title: string;
   currencyFormat: string;
+  currencyId: 'BRL' | 'USD' | 'EUR';
   price: number;
+  installments: number;
 };
 
 const ProductCard: FunctionComponent<Props> = ({
   title,
   currencyFormat,
+  currencyId,
   price,
+  installments,
 }) => {
   const componentClassName = 'c-product-card';
 
@@ -40,6 +44,16 @@ const ProductCard: FunctionComponent<Props> = ({
           {priceFraction}
         </span>
       </div>
+
+      {installments > 0 && (
+        <div
+          className={`${componentClassName}__installments`}
+          data-testid="installments"
+        >
+          ou {installments} x{' '}
+          {getPrettyPriceFormat(price / installments, currencyId)}
+        </div>
+      )}
     </article>
   );
 };

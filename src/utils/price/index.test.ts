@@ -1,4 +1,4 @@
-import { getPriceObject, buildPriceObject } from '.';
+import { getPriceObject, buildPriceObject, getPrettyPriceFormat } from '.';
 
 describe('getPriceParts', () => {
   it('Should return correctly formatted price', () => {
@@ -12,5 +12,20 @@ describe('getPriceParts', () => {
   it('Should return undefined for non number', () => {
     // @ts-ignore
     expect(getPriceObject('190')).toBeUndefined();
+  });
+});
+
+describe('getPrettyPriceFormat', () => {
+  it('Should return pretty format', () => {
+    const spaceCharCode = '\xa0';
+
+    expect(getPrettyPriceFormat(190.9, 'BRL')).toEqual(
+      `R$${spaceCharCode}190,90`
+    );
+  });
+
+  it('Should return undefined for non number', () => {
+    // @ts-ignore
+    expect(getPrettyPriceFormat('190.9', 'BRL')).toBeUndefined();
   });
 });

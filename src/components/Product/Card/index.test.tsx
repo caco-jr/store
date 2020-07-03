@@ -8,9 +8,11 @@ const mockCardProps = {
   title: 'Camiseta SPFC',
   currencyFormat: 'R$',
   price: 229.9,
+  installments: 9,
+  currencyId: 'BRL' as const,
 };
 
-describe('Card', () => {
+describe('Card content checks', () => {
   it('Should have title', () => {
     const { getByText } = render(<ProductCard {...mockCardProps} />);
 
@@ -33,5 +35,18 @@ describe('Card', () => {
     const { getByTestId } = render(<ProductCard {...mockCardProps} />);
 
     expect(getByTestId('price-fraction').textContent).toBe('90');
+  });
+
+  it('Should have installments', () => {
+    const { getByText } = render(<ProductCard {...mockCardProps} />);
+
+    expect(getByText(/ou 9 x R\$ 25,54/i)).toBeInTheDocument();
+  });
+
+  it('Should not render installments', () => {
+    const mock = { ...mockCardProps, installments: 0 };
+    const { queryByTestId } = render(<ProductCard {...mock} />);
+
+    expect(queryByTestId('installments')).not.toBeInTheDocument();
   });
 });
