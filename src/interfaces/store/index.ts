@@ -11,7 +11,7 @@ type Cart = {
   style: string;
   price: number;
   installments: number;
-  currencyId: string;
+  currencyId: 'BRL' | 'USD' | 'EUR';
   currencyFormat: string;
   isFreeShipping: boolean;
 };

@@ -4,6 +4,8 @@ import { GetStaticProps } from 'next';
 import Layout from '@components/Layout';
 import { getStoreAPI } from '@services/api';
 import { Store } from '@interfaces/store';
+import ProductList from '@components/Product/List';
+import ProductCard from '@components/Product/Card';
 
 type Props = {
   store: Store;
@@ -11,7 +13,11 @@ type Props = {
 
 const IndexPage: FunctionComponent<Props> = ({ store }) => (
   <Layout title="Home">
-    <h1>{store.products[0].price}</h1>
+    <ProductList>
+      {store.products.map((product) => (
+        <ProductCard {...product} key={product.id} />
+      ))}
+    </ProductList>
   </Layout>
 );
 
