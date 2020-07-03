@@ -7,6 +7,7 @@ import ProductCard from './index';
 const mockCardProps = {
   title: 'Camiseta SPFC',
   currencyFormat: 'R$',
+  price: 229.9,
 };
 
 describe('Card', () => {
@@ -20,5 +21,17 @@ describe('Card', () => {
     const { getByText } = render(<ProductCard {...mockCardProps} />);
 
     expect(getByText(mockCardProps.currencyFormat)).toBeInTheDocument();
+  });
+
+  it('Should have integer price', () => {
+    const { getByTestId } = render(<ProductCard {...mockCardProps} />);
+
+    expect(getByTestId('price-integer').textContent).toBe('229');
+  });
+
+  it('Should have fraction price', () => {
+    const { getByTestId } = render(<ProductCard {...mockCardProps} />);
+
+    expect(getByTestId('price-fraction').textContent).toBe('90');
   });
 });
