@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, FunctionComponent } from 'react';
 import Head from 'next/head';
 
 import '@styles/main.scss';
@@ -8,7 +8,7 @@ type Props = {
   title?: string;
 };
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => (
+const Layout: FunctionComponent<Props> = ({ children, title }: Props) => (
   <>
     <Head>
       <title>{title}</title>
@@ -28,5 +28,9 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
     <main>{children}</main>
   </>
 );
+
+Layout.defaultProps = {
+  title: 'Store',
+};
 
 export default Layout;
