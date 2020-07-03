@@ -1,14 +1,14 @@
 type priceObject = {
-  integer: string;
-  fraction: string;
+  priceInteger: string;
+  priceFraction: string;
 };
 
 export const buildPriceObject = (
-  integer: string,
-  fraction: string
+  priceInteger: string,
+  priceFraction: string
 ): priceObject => ({
-  integer,
-  fraction,
+  priceInteger,
+  priceFraction,
 });
 
 export const getPriceObject = (price: number): priceObject => {

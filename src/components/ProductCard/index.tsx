@@ -15,7 +15,7 @@ const ProductCard: FunctionComponent<Props> = ({
 }) => {
   const componentClassName = 'c-card';
 
-  const { integer, fraction } = getPriceObject(price);
+  const { priceInteger, priceFraction } = getPriceObject(price);
 
   return (
     <article className={componentClassName}>
@@ -30,14 +30,14 @@ const ProductCard: FunctionComponent<Props> = ({
           className={`${componentClassName}__price-integer`}
           data-testid="price-integer"
         >
-          {integer}
+          {priceInteger}
         </span>
 
         <span
           className={`${componentClassName}__price-fraction`}
           data-testid="price-fraction"
         >
-          {fraction}
+          {priceFraction}
         </span>
       </div>
     </article>
