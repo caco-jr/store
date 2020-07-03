@@ -1,4 +1,4 @@
-import { getPriceObject, buildPriceObject } from './price';
+import { getPriceObject, buildPriceObject } from '.';
 
 describe('getPriceParts', () => {
   it('Should return correctly formatted price', () => {
