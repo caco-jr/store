@@ -41,7 +41,7 @@ const ProductCard: FunctionComponent<Props> = ({
           className={`${componentClassName}__price-fraction`}
           data-testid="price-fraction"
         >
-          {priceFraction}
+          ,{priceFraction}
         </span>
       </div>
 

@@ -34,7 +34,7 @@ describe('Card content checks', () => {
   it('Should have fraction price', () => {
     const { getByTestId } = render(<ProductCard {...mockCardProps} />);
 
-    expect(getByTestId('price-fraction').textContent).toBe('90');
+    expect(getByTestId('price-fraction').textContent).toBe(',90');
   });
 
   it('Should have installments', () => {
