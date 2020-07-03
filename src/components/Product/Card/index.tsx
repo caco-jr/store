@@ -50,8 +50,10 @@ const ProductCard: FunctionComponent<Props> = ({
           className={`${componentClassName}__installments`}
           data-testid="installments"
         >
-          ou {installments} x{' '}
-          {getPrettyPriceFormat(price / installments, currencyId)}
+          {`ou ${installments} x ${getPrettyPriceFormat(
+            price / installments,
+            currencyId
+          )}`}
         </div>
       )}
     </article>
