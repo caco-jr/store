@@ -13,7 +13,7 @@ const ProductCard: FunctionComponent<Props> = ({
   currencyFormat,
   price,
 }) => {
-  const componentClassName = 'c-card';
+  const componentClassName = 'c-product-card';
 
   const { priceInteger, priceFraction } = getPriceObject(price);
 
