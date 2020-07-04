@@ -1,8 +1,8 @@
-export type Store = {
-  products: Cart[];
-};
+export interface Store {
+  products: Product[];
+}
 
-type Cart = {
+export interface Product {
   id: number;
   sku: number;
   title: string;
@@ -14,4 +14,4 @@ type Cart = {
   currencyId: 'BRL' | 'USD' | 'EUR';
   currencyFormat: string;
   isFreeShipping: boolean;
-};
+}

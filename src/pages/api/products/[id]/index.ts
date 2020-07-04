@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { storeData } from '../data';
+import { storeData } from 'src/__mocks__/api/data';
 
 const handler = (_req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -15,7 +15,7 @@ const handler = (_req: NextApiRequest, res: NextApiResponse) => {
     if (!product) {
       return res
         .status(404)
-        .json({ status: 404, message: 'Product not found' });
+        .json({ statusCode: 404, message: 'Product not found' });
     }
 
     res.status(200).json(product);

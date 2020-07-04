@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-
-import { storeData } from './data';
+import { storeData } from 'src/__mocks__/api/data';
 
 const handler = (_req: NextApiRequest, res: NextApiResponse) => {
   try {
