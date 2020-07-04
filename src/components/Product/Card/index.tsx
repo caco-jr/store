@@ -1,8 +1,11 @@
 import React, { FunctionComponent } from 'react';
+import Link from 'next/link';
 
 import { getPriceObject, getPrettyPriceFormat } from '@utils/price';
+import { getProductURI } from '@utils/URIs/pages';
 
 type Props = {
+  id: string;
   title: string;
   currencyFormat: string;
   currencyId: 'BRL' | 'USD' | 'EUR';
@@ -11,6 +14,7 @@ type Props = {
 };
 
 const ProductCard: FunctionComponent<Props> = ({
+  id,
   title,
   currencyFormat,
   currencyId,
@@ -23,7 +27,9 @@ const ProductCard: FunctionComponent<Props> = ({
 
   return (
     <article className={componentClassName}>
-      <span className={`${componentClassName}__title`}>{title}</span>
+      <Link href={getProductURI(id)}>
+        <span className={`${componentClassName}__title`}>{title}</span>
+      </Link>
 
       <div className={`${componentClassName}__price`}>
         <span className={`${componentClassName}__currency-format`}>
