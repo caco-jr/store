@@ -3,6 +3,7 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import logger from 'redux-logger';
 
 import { cartReducer } from '@redux/cart/reducer';
 
@@ -12,20 +13,17 @@ const persistConfig = {
   whitelist: ['cart'],
 };
 
-const persistedReducer = persistReducer(
-  persistConfig,
-  combineReducers({ cart: cartReducer })
-);
+const combinedReducers = combineReducers({ cart: cartReducer });
 
-const initialStore = {
-  cart: null,
-};
+const persistedReducer = persistReducer(persistConfig, combinedReducers);
+
+const initialStore = { ...combinedReducers };
 
 function makeStore(initialState = initialStore) {
   return createStore(
     persistedReducer,
     initialState,
-    composeWithDevTools(applyMiddleware())
+    composeWithDevTools(applyMiddleware(logger))
   );
 }
 
