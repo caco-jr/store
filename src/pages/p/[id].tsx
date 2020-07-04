@@ -6,6 +6,8 @@ import { STORE_NAME } from '@utils/strings';
 import { Product } from '@interfaces/store';
 import { getProductAPI, getProductsAPI } from '@services/api';
 import { isArray } from 'util';
+import CartAdd from '@components/Cart/Add';
+import { getPrettyPriceFormat } from '@utils/price/index';
 
 interface Props {
   response?: Product;
@@ -23,11 +25,23 @@ const ProductPage: FunctionComponent<Props> = ({ errors, response }) => {
     );
   }
 
-  const { title } = response;
+  const { title, description, price, currencyId } = response;
 
   return (
     <Layout title={`${title}`}>
-      <span className={`${componentClassName}`}>{title}</span>
+      <section className={`container`}>
+        <h1 className={`${componentClassName}__title`}>{title}</h1>
+
+        <span className={`${componentClassName}__description`}>
+          {description}
+        </span>
+
+        <span className={`${componentClassName}__price`}>
+          {getPrettyPriceFormat(price, currencyId)}
+        </span>
+
+        <CartAdd product={response} />
+      </section>
     </Layout>
   );
 };
