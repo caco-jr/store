@@ -10,9 +10,13 @@ const Header: FunctionComponent<Props> = ({}) => {
 
   return (
     <header className={componentClassName}>
-      <span className={`${componentClassName}__store-name`}>{STORE_NAME}</span>
+      <section className={`container`}>
+        <span className={`${componentClassName}__store-name`}>
+          {STORE_NAME}
+        </span>
 
-      <CartToggleTab />
+        <CartToggleTab />
+      </section>
     </header>
   );
 };
