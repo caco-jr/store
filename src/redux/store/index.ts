@@ -18,7 +18,7 @@ const persistedReducer = persistReducer(
 );
 
 const initialStore = {
-  cart: [],
+  cart: null,
 };
 
 function makeStore(initialState = initialStore) {

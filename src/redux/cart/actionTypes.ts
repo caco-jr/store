@@ -1,4 +1,6 @@
 export const cartActionType = {
   ADD_TO_CART: 'ADD_TO_CART',
   REMOVE_FROM_CART: 'REMOVE_FROM_CART',
+  OPEN_CART_TAB: 'OPEN_CART_TAB',
+  CLOSE_CART_TAB: 'CLOSE_CART_TAB',
 };
