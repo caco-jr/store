@@ -33,16 +33,21 @@ const ProductPage: FunctionComponent<Props> = ({ errors, response }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  // Get the paths we want to pre-render based on products
   const response = await getProductsAPI();
 
+  // Get the paths we want to pre-render based on products
   const paths = response.products.map((user) => ({
-    params: { id: user.id.toString() },
+    params: {
+      id: user.id.toString(),
+    },
   }));
 
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
-  return { paths, fallback: false };
+  return {
+    paths,
+    fallback: false,
+  };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
