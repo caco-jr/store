@@ -2,6 +2,8 @@ import React, { ReactNode, FunctionComponent } from 'react';
 import Head from 'next/head';
 
 import '@styles/main.scss';
+import Header from '@components/Header';
+import { STORE_NAME } from '@utils/strings';
 
 type Props = {
   children?: ReactNode;
@@ -25,12 +27,14 @@ const Layout: FunctionComponent<Props> = ({ children, title }: Props) => (
       />
     </Head>
 
+    <Header />
+
     <main>{children}</main>
   </>
 );
 
 Layout.defaultProps = {
-  title: 'Store',
+  title: STORE_NAME,
 };
 
 export default Layout;
