@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 
 import { STORE_NAME } from '@utils/strings';
-import CartButton from '@components/Cart/Button';
+import ToggleTab from '@components/Cart/ToggleTab';
 
 type Props = {};
 
@@ -12,7 +12,7 @@ const Header: FunctionComponent<Props> = ({}) => {
     <header className={componentClassName}>
       <span className={`${componentClassName}__store-name`}>{STORE_NAME}</span>
 
-      <CartButton />
+      <ToggleTab />
     </header>
   );
 };
