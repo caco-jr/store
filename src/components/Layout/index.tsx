@@ -4,6 +4,7 @@ import Head from 'next/head';
 import '@styles/main.scss';
 import Header from '@components/Header';
 import { STORE_NAME } from '@utils/strings';
+import CartTab from '@components/Cart/Tab';
 
 type Props = {
   children?: ReactNode;
@@ -28,6 +29,8 @@ const Layout: FunctionComponent<Props> = ({ children, title }: Props) => (
     </Head>
 
     <Header />
+
+    <CartTab />
 
     <main>{children}</main>
   </>
