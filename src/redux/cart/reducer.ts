@@ -21,7 +21,9 @@ export const cartReducer = (state = cartInitialState, action): Cart => {
       return { ...state, items };
 
     case REMOVE_FROM_CART:
-      return { ...state };
+      const filteredItems = state.items.filter((item) => item.id !== action.id);
+
+      return { ...state, items: filteredItems };
 
     case TOGGLE_CART_TAB:
       return { ...state, isVisible: !state.isVisible };
