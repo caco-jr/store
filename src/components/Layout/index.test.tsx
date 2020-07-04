@@ -1,12 +1,20 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import { Provider } from 'react-redux';
 
 import Layout from '.';
+import { initialStoreMock, mockStore } from '@redux/store/mock';
 
 describe('LayoutComponent', () => {
   it('Should have main tag', () => {
-    const { container } = render(<Layout title="Layout Testing" />);
+    const store = mockStore(initialStoreMock);
+
+    const { container } = render(
+      <Provider store={store}>
+        <Layout title="Layout Testing" />
+      </Provider>
+    );
 
     expect(container.querySelector('main')).toBeInTheDocument();
   });
@@ -16,12 +24,15 @@ describe('LayoutComponent', () => {
   });
 
   it('Should render children content', () => {
+    const store = mockStore(initialStoreMock);
     const text = 'Hello world!';
 
     const { getByText } = render(
-      <Layout>
-        <h1>{text}</h1>
-      </Layout>
+      <Provider store={store}>
+        <Layout>
+          <h1>{text}</h1>
+        </Layout>
+      </Provider>
     );
 
     expect(getByText(text)).toBeInTheDocument();

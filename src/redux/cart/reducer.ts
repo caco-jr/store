@@ -1,11 +1,11 @@
 import { cartActionType } from './actionTypes';
 
-const initialState = {
+export const cartInitialState = {
   isVisible: false,
   items: [],
 };
 
-export const cartReducer = (state = initialState, action) => {
+export const cartReducer = (state = cartInitialState, action) => {
   const { ADD_TO_CART, REMOVE_FROM_CART, TOGGLE_CART_TAB } = cartActionType;
 
   switch (action.type) {
