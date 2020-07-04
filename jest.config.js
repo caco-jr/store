@@ -12,11 +12,13 @@ module.exports = {
     '@services/(.*)': '<rootDir>/src/services/$1',
     '@interfaces/(.*)': '<rootDir>/src/interfaces/$1',
     '@redux/(.*)': '<rootDir>/src/redux/$1',
+    '@hooks/(.*)': '<rootDir>/src/hooks/$1',
   },
   collectCoverageFrom: [
     'src/components/**/*.tsx',
     'src/pages/**/*.tsx',
     'src/utils/**/*.ts',
+    'src/hooks/**/*.ts',
   ],
   coverageReporters: ['lcov', 'text'],
 };

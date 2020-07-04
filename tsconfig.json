@@ -25,7 +25,8 @@
       "@styles/*": ["src/styles/*"],
       "@utils/*": ["src/utils/*"],
       "@interfaces/*": ["src/interfaces/*"],
-      "@redux/*": ["src/redux/*"]
+      "@redux/*": ["src/redux/*"],
+      "@hooks/*": ["src/hooks/*"]
     }
   },
   "exclude": ["node_modules"],
