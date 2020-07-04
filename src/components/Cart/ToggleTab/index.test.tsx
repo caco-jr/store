@@ -3,7 +3,7 @@ import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { Provider } from 'react-redux';
 
-import ToggleTab from '.';
+import CartToggleTab from '.';
 import { initialStoreMock, mockStore } from '@redux/store/mock';
 import { cartActionType } from '@redux/cart/actionTypes';
 
@@ -13,7 +13,7 @@ describe('Button Cart', () => {
 
     const { getByText } = render(
       <Provider store={store}>
-        <ToggleTab />
+        <CartToggleTab />
       </Provider>
     );
 
@@ -25,7 +25,7 @@ describe('Button Cart', () => {
 
     const { getByRole } = render(
       <Provider store={store}>
-        <ToggleTab />
+        <CartToggleTab />
       </Provider>
     );
 

@@ -5,13 +5,13 @@ import { toggleCartTab } from '@redux/cart/actions';
 
 type Props = {};
 
-const ToggleTab: FunctionComponent<Props> = ({}) => {
+const CartToggleTab: FunctionComponent<Props> = ({}) => {
   // TODO: Arrumar o typescript
   // @ts-ignore
   const { isVisible, items } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
-  const componentClassName = 'c-toggle-tab';
+  const componentClassName = 'c-cart-toggle-tab';
 
   return (
     <button
@@ -24,4 +24,4 @@ const ToggleTab: FunctionComponent<Props> = ({}) => {
   );
 };
 
-export default ToggleTab;
+export default CartToggleTab;

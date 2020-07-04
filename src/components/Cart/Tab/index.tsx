@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { useSelector } from 'react-redux';
 
-import ToggleTab from '../ToggleTab';
+import CartToggleTab from '../ToggleTab';
 
 type Props = {};
 
@@ -19,7 +19,7 @@ const CartTab: FunctionComponent<Props> = ({}) => {
       }`}
     >
       <header>
-        <ToggleTab />
+        <CartToggleTab />
 
         <span>Sacola</span>
       </header>
