@@ -1,15 +1,12 @@
 .c-header {
-  background-color: #000;
+  background-color: var(--complementary-color-01);
+  margin-bottom: 50px;
 
   &__container {
     display: flex;
     justify-content: space-between;
     min-height: 80px;
     align-items: center;
-
-    * {
-      color: #fff;
-    }
   }
 
   &__store-name {
