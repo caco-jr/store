@@ -5,6 +5,7 @@ import '@testing-library/jest-dom/extend-expect';
 import ProductCard from './index';
 
 const mockCardProps = {
+  id: 1,
   title: 'Camiseta SPFC',
   currencyFormat: 'R$',
   price: 229.9,
