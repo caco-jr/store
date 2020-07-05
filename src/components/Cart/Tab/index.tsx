@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { useSelector } from 'react-redux';
 
 import CartToggleTab from '@components/Cart/ToggleTab';
-import ProductCardHorizontal from '@components/Product/Card/Horizontal';
+import CartProduct from '@components/Cart/Product';
 
 type Props = {};
 
@@ -25,9 +25,7 @@ const CartTab: FunctionComponent<Props> = ({}) => {
         <span>Sacola</span>
 
         {items.length > 0 ? (
-          items.map((item, index) => (
-            <ProductCardHorizontal {...item} key={index} />
-          ))
+          items.map((item, index) => <CartProduct {...item} key={index} />)
         ) : (
           <span className={`${componentClassName}__empty-bag`}>
             Nenhum item adicionado no carrinho

@@ -3,7 +3,8 @@ import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { Provider } from 'react-redux';
 import { initialStoreMock, mockStore } from '@redux/store/mock';
-import ProductCardHorizontal from '.';
+
+import CartProduct from '.';
 
 const cardProps = {
   id: 2,
@@ -16,7 +17,7 @@ describe('Card Horizontal', () => {
 
     const { getByText } = render(
       <Provider store={store}>
-        <ProductCardHorizontal {...cardProps} />
+        <CartProduct {...cardProps} />
       </Provider>
     );
 

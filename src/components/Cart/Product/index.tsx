@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+
 import CartRemove from '@components/Cart/Remove';
 
 type Props = {
@@ -6,8 +7,8 @@ type Props = {
   title: string;
 };
 
-const ProductCardHorizontal: FunctionComponent<Props> = ({ id, title }) => {
-  const componentClassName = 'c-product-card-horizontal';
+const CartProduct: FunctionComponent<Props> = ({ id, title }) => {
+  const componentClassName = 'c-cart-product';
 
   return (
     <article className={componentClassName}>
@@ -18,4 +19,4 @@ const ProductCardHorizontal: FunctionComponent<Props> = ({ id, title }) => {
   );
 };
 
-export default ProductCardHorizontal;
+export default CartProduct;
