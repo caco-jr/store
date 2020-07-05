@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { Product } from '@interfaces/store';
 import { useDispatch } from 'react-redux';
 
+import './index.scss';
 import { addToCart } from '@redux/cart/actions';
 
 type Props = {
