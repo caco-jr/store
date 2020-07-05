@@ -1,15 +1,16 @@
 .c-cart-add {
   border: none;
-  background-color: var(--secondary-color);
+  background-color: var(--green);
   color: #fff;
   padding: 8px 12px;
   border-radius: var(--border-radius);
-  font-size: var(--text-lg);
+  font-size: var(--text);
   font-weight: 700;
   cursor: pointer;
   transition: 0.3s all ease;
+  text-transform: uppercase;
 
   &:hover {
-    background-color: var(--secondary-color-800);
+    background-color: var(--dark-green);
   }
 }

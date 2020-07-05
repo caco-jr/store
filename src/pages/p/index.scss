@@ -21,12 +21,20 @@ $componentClassName: '.c-product-page';
 
   &__container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
   }
 
-  &__figure {
-    grid-column: span 2;
+  &__description {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    display: block;
+    margin: 0 0 30px;
+    font-size: var(--text-lg);
+    font-weight: 700;
   }
 }
 
