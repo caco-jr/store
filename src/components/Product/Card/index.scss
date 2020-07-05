@@ -18,13 +18,28 @@ $componentClassName: '.c-product-card';
   &__title {
     text-align: center;
     display: block;
-    margin: 10px 0 5px;
+    margin: 10px 0 15px;
     min-height: 35px;
   }
 
   &__price {
     display: block;
     text-align: center;
+    position: relative;
+  }
+
+  &__price::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    margin: 0 auto;
+    position: absolute;
+    top: -7px;
+    left: 0;
+    right: 0;
   }
 
   &__currency-format,
