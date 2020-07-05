@@ -68,7 +68,7 @@ const ProductCard: FunctionComponent<Props> = ({
         </span>
       </div>
 
-      {installments > 0 && (
+      {installments > 1 && (
         <div
           className={`${componentClassName}__installments`}
           data-testid="installments"

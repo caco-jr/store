@@ -1,4 +1,10 @@
-.c-product-card {
+$componentClassName: '.c-product-card';
+
+#{$componentClassName} {
+  a {
+    text-decoration: none;
+  }
+
   &__figure {
     overflow: hidden;
     border-radius: var(--border-radius);
@@ -7,9 +13,41 @@
   &__image {
     transform: scale(1);
     transition: 0.3s all ease;
+  }
 
-    &:hover {
-      transform: scale(1.1);
+  &__title {
+    text-align: center;
+    display: block;
+    margin: 10px 0 5px;
+    min-height: 35px;
+  }
+
+  &__price {
+    display: block;
+    text-align: center;
+  }
+
+  &__currency-format,
+  &__price-fraction {
+    font-size: var(--text-xs);
+  }
+
+  &__price-integer {
+    font-size: var(--title);
+    font-weight: var(--title-weight);
+  }
+
+  &__installments {
+    margin-top: 5px;
+    color: var(--light-text-color);
+    text-align: center;
+  }
+
+  &:hover {
+    #{$componentClassName} {
+      &__image {
+        transform: scale(1.1);
+      }
     }
   }
 }
