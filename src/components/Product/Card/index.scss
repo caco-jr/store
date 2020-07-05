@@ -50,6 +50,7 @@ $componentClassName: '.c-product-card';
   &__price-integer {
     font-size: var(--title);
     font-weight: var(--title-weight);
+    margin-left: 4px;
   }
 
   &__installments {
