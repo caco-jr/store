@@ -41,20 +41,20 @@
   --red-800: rgba(242, 98, 117, 0.8);
   // ----------------------------------
   // --- Brand Colors
-  --primary-color: rgb(255, 23, 68);
-  --dark-primary-color: rgb(230, 21, 62);
-  --primary-color-60: rgba(255, 23, 68, 0.06);
-  --primary-color-80: rgba(255, 23, 68, 0.08);
-  --primary-color-240: rgba(255, 23, 68, 0.24);
-  --primary-color-400: rgba(255, 23, 68, 0.4);
-  --primary-color-800: rgba(255, 23, 68, 0.8);
-  --secondary-color: rgb(104, 108, 255);
-  --dark-secondary-color: rgb(94, 99, 230);
-  --secondary-color-60: rgba(104, 108, 255, 0.06);
-  --secondary-color-80: rgba(104, 108, 255, 0.08);
-  --secondary-color-240: rgba(104, 108, 255, 0.24);
-  --secondary-color-400: rgba(104, 108, 255, 0.4);
-  --secondary-color-800: rgba(104, 108, 255, 0.8);
+  --primary-color: rgb(223, 189, 0);
+  --dark-primary-color: var(--primary-color);
+  --primary-color-60: rgba(223, 189, 0.06);
+  --primary-color-80: rgba(223, 189, 0.08);
+  --primary-color-240: rgba(223, 189, 0.24);
+  --primary-color-400: rgba(223, 189, 0.4);
+  --primary-color-800: rgba(223, 189, 0.8);
+  --secondary-color: rgb(32, 32, 37);
+  --dark-secondary-color: var(--secondary-color);
+  --secondary-color-60: rgba(32, 32, 37, 0.06);
+  --secondary-color-80: rgba(32, 32, 37, 0.08);
+  --secondary-color-240: rgba(32, 32, 37, 0.24);
+  --secondary-color-400: rgba(32, 32, 37, 0.4);
+  --secondary-color-800: rgba(32, 32, 37, 0.8);
   --tertiary-color: #2a3942;
   --dark-tertiary-color: #2a3942;
   // ----------------------------------
