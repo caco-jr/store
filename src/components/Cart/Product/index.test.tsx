@@ -5,11 +5,9 @@ import { Provider } from 'react-redux';
 import { initialStoreMock, mockStore } from '@redux/store/mock';
 
 import CartProduct from '.';
+import { mockStoreData } from 'src/__mocks__/api/data';
 
-const cardProps = {
-  id: 2,
-  title: 'Camisa Preta',
-};
+const cardProps = { ...mockStoreData.products[0] };
 
 describe('Card Horizontal', () => {
   it('should have title', () => {
