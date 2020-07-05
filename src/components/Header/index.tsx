@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
 
+import './index.scss';
 import { STORE_NAME } from '@utils/strings';
 import CartToggleTab from '@components/Cart/ToggleTab';
 
@@ -10,7 +11,7 @@ const Header: FunctionComponent<Props> = ({}) => {
 
   return (
     <header className={componentClassName}>
-      <section className={`container`}>
+      <section className={`container ${componentClassName}__container`}>
         <span className={`${componentClassName}__store-name`}>
           {STORE_NAME}
         </span>
