@@ -3,13 +3,12 @@ import { useSelector } from 'react-redux';
 
 import CartToggleTab from '@components/Cart/ToggleTab';
 import CartProduct from '@components/Cart/Product';
+import { ReduxStore } from '@redux/store/interface';
 
 type Props = {};
 
 const CartTab: FunctionComponent<Props> = ({}) => {
-  // TODO: Arrumar o typescript
-  // @ts-ignore
-  const { isVisible, items } = useSelector((state) => state.cart);
+  const { isVisible, items } = useSelector((state: ReduxStore) => state.cart);
 
   const componentClassName = 'c-cart-tab';
 

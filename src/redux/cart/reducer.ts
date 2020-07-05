@@ -1,17 +1,13 @@
 import { cartActionType } from './actionTypes';
-import { Product } from '@interfaces/store';
 
-interface Cart {
-  isVisible: boolean;
-  items: Product[];
-}
+import { CartReducer } from './interface';
 
-export const cartInitialState: Cart = {
+export const cartInitialState: CartReducer = {
   isVisible: false,
   items: [],
 };
 
-export const cartReducer = (state = cartInitialState, action): Cart => {
+export const cartReducer = (state = cartInitialState, action): CartReducer => {
   const { ADD_TO_CART, REMOVE_FROM_CART, TOGGLE_CART_TAB } = cartActionType;
 
   switch (action.type) {
