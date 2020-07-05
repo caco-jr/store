@@ -1,2 +1,9 @@
 .c-cart-product {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+
+  &:hover {
+    background-color: var(--dark-secondary-color);
+  }
 }
