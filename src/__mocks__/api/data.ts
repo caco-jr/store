@@ -1,6 +1,6 @@
 import { Store } from '@interfaces/store/index';
 
-export const storeData: Store = {
+export const mockStoreData: Store = {
   products: [
     {
       id: 0,

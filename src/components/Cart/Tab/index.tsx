@@ -23,13 +23,18 @@ const CartTab: FunctionComponent<Props> = ({}) => {
 
         <span>Sacola</span>
 
-        {items.length > 0 ? (
-          items.map((item, index) => <CartProduct {...item} key={index} />)
-        ) : (
-          <span className={`${componentClassName}__empty-bag`}>
-            Nenhum item adicionado no carrinho
-          </span>
-        )}
+        <section
+          className={`${componentClassName}__content`}
+          data-testid="cart-tab-content"
+        >
+          {items.length > 0 ? (
+            items.map((item, index) => <CartProduct {...item} key={index} />)
+          ) : (
+            <span className={`${componentClassName}__empty-bag`}>
+              Nenhum item adicionado no carrinho
+            </span>
+          )}
+        </section>
       </header>
     </section>
   );

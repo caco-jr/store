@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import CartAdd from '.';
 import { mockStore, initialStoreMock } from '@redux/store/mock';
 import { cartActionType } from '@redux/cart/actionTypes';
-import { storeData } from 'src/__mocks__/api/data';
+import { mockStoreData } from 'src/__mocks__/api/data';
 
 describe('Cart addition', () => {
   it('Should have defaultProps', () => {
@@ -18,7 +18,7 @@ describe('Cart addition', () => {
 
     const { getByText } = render(
       <Provider store={store}>
-        <CartAdd product={storeData.products[0]} />
+        <CartAdd product={mockStoreData.products[0]} />
       </Provider>
     );
 
@@ -27,7 +27,7 @@ describe('Cart addition', () => {
 
   it('Should add product to cart', () => {
     const store = mockStore(initialStoreMock);
-    const product = storeData.products[0];
+    const product = mockStoreData.products[0];
 
     const { getByRole } = render(
       <Provider store={store}>

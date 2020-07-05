@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
-import { storeData } from 'src/__mocks__/api/data';
+import { mockStoreData } from 'src/__mocks__/api/data';
 
 const handler = (_req: NextApiRequest, res: NextApiResponse) => {
   try {
@@ -8,7 +8,7 @@ const handler = (_req: NextApiRequest, res: NextApiResponse) => {
       query: { id },
     } = _req;
 
-    const product = storeData.products.find(
+    const product = mockStoreData.products.find(
       (product) => `${product.id}` === `${id}`
     );
 
