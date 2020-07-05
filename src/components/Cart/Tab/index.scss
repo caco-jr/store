@@ -9,6 +9,7 @@
   max-width: 100%;
   transform: translateX(100%);
   transition: 0.3s all ease;
+  z-index: 9;
 
   &--visible {
     transform: translateX(0);
