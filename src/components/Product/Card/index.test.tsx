@@ -3,15 +3,9 @@ import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
 import ProductCard from './index';
+import { mockStoreData } from 'src/__mocks__/api/data';
 
-const mockCardProps = {
-  id: 1,
-  title: 'Camiseta SPFC',
-  currencyFormat: 'R$',
-  price: 229.9,
-  installments: 9,
-  currencyId: 'BRL' as const,
-};
+const mockCardProps = { ...mockStoreData.products[0] };
 
 describe('Card content checks', () => {
   it('Should have title', () => {

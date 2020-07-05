@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { getPriceObject, getPrettyPriceFormat } from '@utils/price';
 import { getProductURI } from '@utils/URIs/pages';
+import { FeaturedMedia } from '@interfaces/store';
 
 type Props = {
   id: number;
@@ -11,6 +12,7 @@ type Props = {
   currencyId: 'BRL' | 'USD' | 'EUR';
   price: number;
   installments: number;
+  featuredMedia: FeaturedMedia;
 };
 
 const ProductCard: FunctionComponent<Props> = ({
@@ -20,6 +22,7 @@ const ProductCard: FunctionComponent<Props> = ({
   currencyId,
   price,
   installments,
+  featuredMedia,
 }) => {
   const componentClassName = 'c-product-card';
 
@@ -27,6 +30,14 @@ const ProductCard: FunctionComponent<Props> = ({
 
   return (
     <article className={componentClassName}>
+      <Link href={getProductURI(`${id}`)}>
+        <a>
+          <figure>
+            <img src={featuredMedia.baseURI} />
+          </figure>
+        </a>
+      </Link>
+
       <Link href={getProductURI(`${id}`)}>
         <a>
           <span className={`${componentClassName}__title`}>{title}</span>
