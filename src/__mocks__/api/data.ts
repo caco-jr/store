@@ -70,18 +70,18 @@ export const mockStoreData: Store = {
     {
       id: 3,
       sku: 876661122392077,
-      title: 'Camisa Feminina Nike Corinthians II',
-      description: '2014 s/nº',
+      title: 'Camisa Liverpool Watros Masculina',
+      description: '',
       availableSizes: ['S', 'G'],
-      style: 'Preto com listras brancas',
-      price: 199.9,
-      installments: 7,
+      style: 'Vermelho',
+      price: 79.9,
+      installments: 1,
       currencyId: 'BRL',
       currencyFormat: 'R$',
       isFreeShipping: true,
       featuredMedia: {
         baseURI:
-          'https://static.netshoes.com.br/produtos/camisa-liga-retro-holanda-1974-feminino/42/395-6678-042/395-6678-042_zoom1.jpg',
+          'https://static.netshoes.com.br/produtos/camisa-liverpool-watros-masculina/16/D65-2730-016/D65-2730-016_zoom1.jpg',
         params: {
           ims: '544x',
         },
@@ -133,18 +133,18 @@ export const mockStoreData: Store = {
     {
       id: 6,
       sku: 6090484789343891,
-      title: 'Jaqueta Corta-Vento Internacional',
-      description: 'Capuz Masculina',
-      availableSizes: ['M', 'GG'],
-      style: 'Vermelho',
-      price: 199.99,
+      title: 'Camisa Manchester City',
+      description: 'Home 19/20 s/n° - Torcedor Puma',
+      availableSizes: ['M', 'G'],
+      style: 'Azul e Roxo',
+      price: 159.99,
       installments: 0,
       currencyId: 'BRL',
       currencyFormat: 'R$',
       isFreeShipping: true,
       featuredMedia: {
         baseURI:
-          'https://static.netshoes.com.br/produtos/jaqueta-corta-vento-internacional-capuz-masculina/16/D65-2770-016/D65-2770-016_zoom1.jpg',
+          'https://static.netshoes.com.br/produtos/camisa-manchester-city-home-1920-sn-torcedor-puma/77/D14-8380-977/D14-8380-977_zoom1.jpg',
         params: {
           ims: '544x',
         },
