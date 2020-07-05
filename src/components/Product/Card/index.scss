@@ -1,0 +1,15 @@
+.c-product-card {
+  &__figure {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+  }
+
+  &__image {
+    transform: scale(1);
+    transition: 0.3s all ease;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

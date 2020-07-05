@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import Link from 'next/link';
 
+import './index.scss';
 import { getPriceObject, getPrettyPriceFormat } from '@utils/price';
 import { getProductURI } from '@utils/URIs/pages';
 import { FeaturedMedia } from '@interfaces/store';
@@ -32,8 +33,11 @@ const ProductCard: FunctionComponent<Props> = ({
     <article className={componentClassName}>
       <Link href={getProductURI(`${id}`)}>
         <a>
-          <figure>
-            <img src={featuredMedia.baseURI} />
+          <figure className={`${componentClassName}__figure`}>
+            <img
+              src={featuredMedia.baseURI}
+              className={`${componentClassName}__image`}
+            />
           </figure>
         </a>
       </Link>
