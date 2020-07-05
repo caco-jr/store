@@ -1,4 +1,4 @@
-import { getHomeURI, getProductURI } from './pages';
+import { getHomeURI, getProductURI } from '.';
 
 describe('URI', () => {
   it('Should return URI for home', () => {
