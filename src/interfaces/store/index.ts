@@ -14,4 +14,13 @@ export interface Product {
   currencyId: 'BRL' | 'USD' | 'EUR';
   currencyFormat: string;
   isFreeShipping: boolean;
+  featuredMedia: FeaturedMedia;
+}
+
+export interface FeaturedMedia {
+  baseURI: string;
+  params?: {
+    ims: string;
+    ts?: string;
+  };
 }
