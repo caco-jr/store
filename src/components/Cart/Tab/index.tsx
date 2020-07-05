@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { useSelector } from 'react-redux';
 
+import './index.scss';
 import CartToggleTab from '@components/Cart/ToggleTab';
 import CartProduct from '@components/Cart/Product';
 import { ReduxStore } from '@redux/store/interface';
