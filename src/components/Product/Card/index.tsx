@@ -28,7 +28,9 @@ const ProductCard: FunctionComponent<Props> = ({
   return (
     <article className={componentClassName}>
       <Link href={getProductURI(`${id}`)}>
-        <span className={`${componentClassName}__title`}>{title}</span>
+        <a>
+          <span className={`${componentClassName}__title`}>{title}</span>
+        </a>
       </Link>
 
       <div className={`${componentClassName}__price`}>
