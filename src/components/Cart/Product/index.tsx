@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 
-import './index.scss';
+import styles from './index.module.scss';
 import CartRemove from '@components/Cart/Remove';
 import { FeaturedMedia } from '@interfaces/store';
 import { getPriceObject } from '@utils/price';
@@ -23,40 +23,33 @@ const CartProduct: FunctionComponent<Props> = ({
   featuredMedia,
   currencyFormat,
 }) => {
-  const componentClassName = 'c-cart-product';
-
   const { priceInteger, priceFraction } = getPriceObject(price);
 
   return (
-    <article className={componentClassName}>
-      <section className={`${componentClassName}__container`}>
-        <figure className={`${componentClassName}__figure`}>
+    <article className={styles['c-cart-product']}>
+      <section className={styles['wrapper']}>
+        <figure className={styles['figure']}>
           <img
-            className={`${componentClassName}__image`}
+            className={styles['image']}
             src={buildImageURI(featuredMedia.baseURI, { width: 80 })}
           />
         </figure>
 
-        <section className={`${componentClassName}__content`}>
-          <span className={`${componentClassName}__title`}>{title}</span>
+        <section className={styles['content']}>
+          <span className={styles['title']}>{title}</span>
 
-          <span className={`${componentClassName}__style`}>{style}</span>
+          <span className={styles['style']}>{style}</span>
         </section>
 
-        <div className={`${componentClassName}__price`}>
-          <span className={`${componentClassName}__currency-format`}>
-            {currencyFormat}
-          </span>
+        <div className={styles['price']}>
+          <span className={styles['currency-format']}>{currencyFormat}</span>
 
-          <span
-            className={`${componentClassName}__price-integer`}
-            data-testid="price-integer"
-          >
+          <span className={styles['price-integer']} data-testid="price-integer">
             {priceInteger}
           </span>
 
           <span
-            className={`${componentClassName}__price-fraction`}
+            className={styles['price-fraction']}
             data-testid="price-fraction"
           >
             ,{priceFraction}
@@ -64,7 +57,7 @@ const CartProduct: FunctionComponent<Props> = ({
         </div>
       </section>
 
-      <CartRemove id={`${id}`} />
+      <CartRemove id={`${id}`} className={styles['remove']} />
     </article>
   );
 };

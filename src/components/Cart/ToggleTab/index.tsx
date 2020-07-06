@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import './index.scss';
+import styles from './index.module.scss';
 import { toggleCartTab } from '@redux/cart/actions';
 import { ReduxStore } from '@redux/store/interface';
 import CartIcon from '@icons/Cart';
@@ -15,27 +15,23 @@ const CartToggleTab: FunctionComponent<Props> = ({ mode }) => {
   const { isVisible, items } = useSelector((state: ReduxStore) => state.cart);
   const dispatch = useDispatch();
 
-  const componentClassName = 'c-cart-toggle-tab';
-
   return (
     <button
       type="button"
-      className={`${componentClassName} ${componentClassName}--${mode}`}
+      className={`${styles['c-cart-toggle-tab']} ${styles['m-' + mode]}`}
       onClick={() => dispatch(toggleCartTab())}
     >
       {isVisible && (
         <BackIcon
           width="16"
           height="16"
-          className={`${componentClassName}__icon ${componentClassName}__icon--back`}
+          className={`${styles['icon']} ${styles['m-back']}`}
         />
       )}
 
-      <CartIcon
-        className={`${componentClassName}__icon  ${componentClassName}__icon--cart`}
-      />
+      <CartIcon className={`${styles['icon']} ${styles['m-cart']}`} />
 
-      <span className={`${componentClassName}__length`}>{items.length}</span>
+      <span className={styles['length']}>{items.length}</span>
     </button>
   );
 };

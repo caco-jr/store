@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { FunctionComponent } from 'react';
 
-import './index.scss';
+import styles from './index.module.scss';
 import Layout from '@components/Layout';
 import { STORE_NAME } from '@utils/strings';
 import { Product } from '@interfaces/store';
@@ -15,8 +15,6 @@ interface Props {
 }
 
 const ProductPage: FunctionComponent<Props> = ({ errors, response }) => {
-  const componentClassName = 'c-product-page';
-
   if (errors || !response) {
     return (
       <Layout title={`Erro | ${STORE_NAME}`}>
@@ -30,22 +28,17 @@ const ProductPage: FunctionComponent<Props> = ({ errors, response }) => {
   return (
     <Layout title={`${title}`}>
       <section className={`container`}>
-        <h1 className={`${componentClassName}__title`}>{title}</h1>
+        <h1 className={styles['title']}>{title}</h1>
 
-        <section className={`${componentClassName}__container`}>
-          <figure className={`${componentClassName}__figure`}>
-            <img
-              className={`${componentClassName}__image`}
-              src={featuredMedia.baseURI}
-            />
+        <section className={styles['wrapper']}>
+          <figure className={styles['figure']}>
+            <img className={styles['image']} src={featuredMedia.baseURI} />
           </figure>
 
-          <section className={`${componentClassName}__content`}>
-            <span className={`${componentClassName}__description`}>
-              {description}
-            </span>
+          <section className={styles['content']}>
+            <span className={styles['description']}>{description}</span>
 
-            <span className={`${componentClassName}__price`}>
+            <span className={styles['price']}>
               {getPrettyPriceFormat(price, currencyId)}
             </span>
 

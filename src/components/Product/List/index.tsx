@@ -1,14 +1,12 @@
 import React, { FunctionComponent } from 'react';
-import './index.scss';
+import styles from './index.module.scss';
 
 type Props = {};
 
 const ProductList: FunctionComponent<Props> = ({ children }) => {
-  const componentClassName = 'c-product-list';
-
   return (
     <section className="container">
-      <section className={componentClassName}>{children}</section>
+      <section className={styles['c-product-list']}>{children}</section>
     </section>
   );
 };

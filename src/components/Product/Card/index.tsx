@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import Link from 'next/link';
 
-import './index.scss';
+import styles from './index.module.scss';
 import { getPriceObject, getPrettyPriceFormat } from '@utils/price';
 import { getProductURI } from '@utils/URIs/pages';
 import { FeaturedMedia } from '@interfaces/store';
@@ -26,18 +26,16 @@ const ProductCard: FunctionComponent<Props> = ({
   installments,
   featuredMedia,
 }) => {
-  const componentClassName = 'c-product-card';
-
   const { priceInteger, priceFraction } = getPriceObject(price);
 
   return (
-    <article className={componentClassName}>
+    <article className={styles['c-product-card']}>
       <Link {...getProductURI(`${id}`)}>
         <a>
-          <figure className={`${componentClassName}__figure`}>
+          <figure className={styles['figure']}>
             <img
               src={buildImageURI(featuredMedia.baseURI)}
-              className={`${componentClassName}__image`}
+              className={styles['image']}
             />
           </figure>
         </a>
@@ -45,35 +43,24 @@ const ProductCard: FunctionComponent<Props> = ({
 
       <Link {...getProductURI(`${id}`)}>
         <a>
-          <span className={`${componentClassName}__title`}>{title}</span>
+          <span className={styles['title']}>{title}</span>
         </a>
       </Link>
 
-      <div className={`${componentClassName}__price`}>
-        <span className={`${componentClassName}__currency-format`}>
-          {currencyFormat}
-        </span>
+      <div className={styles['price']}>
+        <span className={styles['currency-format']}>{currencyFormat}</span>
 
-        <span
-          className={`${componentClassName}__price-integer`}
-          data-testid="price-integer"
-        >
+        <span className={styles['price-integer']} data-testid="price-integer">
           {priceInteger}
         </span>
 
-        <span
-          className={`${componentClassName}__price-fraction`}
-          data-testid="price-fraction"
-        >
+        <span className={styles['price-fraction']} data-testid="price-fraction">
           ,{priceFraction}
         </span>
       </div>
 
       {installments > 1 && (
-        <div
-          className={`${componentClassName}__installments`}
-          data-testid="installments"
-        >
+        <div className={styles['installments']} data-testid="installments">
           {`ou ${installments} x ${getPrettyPriceFormat(
             price / installments,
             currencyId

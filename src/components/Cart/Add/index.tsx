@@ -2,7 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { Product } from '@interfaces/store';
 import { useDispatch } from 'react-redux';
 
-import './index.scss';
+import styles from './index.module.scss';
 import { addToCart } from '@redux/cart/actions';
 
 type Props = {
@@ -11,13 +11,12 @@ type Props = {
 };
 
 const CartAdd: FunctionComponent<Props> = ({ text, product }) => {
-  const componentClassName = 'c-cart-add';
   const dispatch = useDispatch();
 
   return (
     <button
       type="button"
-      className={componentClassName}
+      className={styles['c-cart-add']}
       onClick={() => dispatch(addToCart(product))}
     >
       {text}
