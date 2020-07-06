@@ -1,29 +1,18 @@
 import { useMemo } from 'react';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
 import logger from 'redux-logger';
 
 import { cartReducer } from '@redux/cart/reducer';
 import { initialStoreMock } from './mock';
 import { ReduxStore } from './interface';
 
-const persistConfig = {
-  key: 'root',
-  storage,
-  whitelist: ['cart'],
-};
-
 const combinedReducers = combineReducers({ cart: cartReducer });
-
-const persistedReducer = persistReducer(persistConfig, combinedReducers);
-
 const initialStore: ReduxStore = { ...initialStoreMock };
 
-function makeStore(initialState = initialStore) {
+function makeStore(initialState: ReduxStore = initialStore) {
   return createStore(
-    persistedReducer,
+    combinedReducers,
     initialState,
     composeWithDevTools(applyMiddleware(logger))
   );
