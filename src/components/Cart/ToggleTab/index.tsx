@@ -1,12 +1,16 @@
 import React, { FunctionComponent } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import './index.scss';
 import { toggleCartTab } from '@redux/cart/actions';
 import { ReduxStore } from '@redux/store/interface';
+import CartIcon from '@icons/Cart';
 
-type Props = {};
+type Props = {
+  mode?: 'dark' | 'light';
+};
 
-const CartToggleTab: FunctionComponent<Props> = ({}) => {
+const CartToggleTab: FunctionComponent<Props> = ({ mode }) => {
   const { isVisible, items } = useSelector((state: ReduxStore) => state.cart);
   const dispatch = useDispatch();
 
@@ -15,12 +19,18 @@ const CartToggleTab: FunctionComponent<Props> = ({}) => {
   return (
     <button
       type="button"
-      className={`${componentClassName}`}
+      className={`${componentClassName} ${componentClassName}--${mode}`}
       onClick={() => dispatch(toggleCartTab())}
     >
-      {items.length}
+      <CartIcon className={`${componentClassName}__icon`} />
+
+      <span className={`${componentClassName}__length`}>{items.length}</span>
     </button>
   );
+};
+
+CartToggleTab.defaultProps = {
+  mode: 'light',
 };
 
 export default CartToggleTab;

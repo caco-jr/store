@@ -20,7 +20,7 @@ const CartTab: FunctionComponent<Props> = ({}) => {
       }`}
     >
       <header>
-        <CartToggleTab />
+        <CartToggleTab mode="dark" />
 
         <span>Sacola</span>
 
