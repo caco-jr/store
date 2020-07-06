@@ -29,17 +29,19 @@ const CartProduct: FunctionComponent<Props> = ({
 
   return (
     <article className={componentClassName}>
-      <figure className={`${componentClassName}__figure`}>
-        <img
-          className={`${componentClassName}__image`}
-          src={buildImageURI(featuredMedia.baseURI, { width: 80 })}
-        />
-      </figure>
+      <section className={`${componentClassName}__container`}>
+        <figure className={`${componentClassName}__figure`}>
+          <img
+            className={`${componentClassName}__image`}
+            src={buildImageURI(featuredMedia.baseURI, { width: 80 })}
+          />
+        </figure>
 
-      <section className={`${componentClassName}__content`}>
-        <span className={`${componentClassName}__title`}>{title}</span>
+        <section className={`${componentClassName}__content`}>
+          <span className={`${componentClassName}__title`}>{title}</span>
 
-        <span className={`${componentClassName}__style`}>{style}</span>
+          <span className={`${componentClassName}__style`}>{style}</span>
+        </section>
 
         <div className={`${componentClassName}__price`}>
           <span className={`${componentClassName}__currency-format`}>
