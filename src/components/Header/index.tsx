@@ -14,7 +14,7 @@ const Header: FunctionComponent<Props> = ({}) => {
   return (
     <header className={componentClassName}>
       <section className={`container ${componentClassName}__container`}>
-        <Link href={getHomeURI()}>
+        <Link {...getHomeURI()}>
           <span className={`${componentClassName}__store-name`}>
             {STORE_NAME}
           </span>

@@ -1,3 +1,11 @@
-export const getHomeURI = (): string => '/';
+type RouteObject = {
+  href: string;
+  as: string;
+};
 
-export const getProductURI = (id: string): string => `/p/${id}`;
+export const getHomeURI = (): RouteObject => ({ href: '/', as: '/' });
+
+export const getProductURI = (id: string): RouteObject => ({
+  href: '/p/[id]',
+  as: `/p/${id}`,
+});
