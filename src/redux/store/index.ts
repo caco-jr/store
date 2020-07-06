@@ -6,9 +6,11 @@ import storage from 'redux-persist/lib/storage';
 import logger from 'redux-logger';
 
 import { cartReducer } from '@redux/cart/reducer';
+import { initialStoreMock } from './mock';
+import { ReduxStore } from './interface';
 
 const persistConfig = {
-  key: 'primary',
+  key: 'root',
   storage,
   whitelist: ['cart'],
 };
@@ -17,7 +19,7 @@ const combinedReducers = combineReducers({ cart: cartReducer });
 
 const persistedReducer = persistReducer(persistConfig, combinedReducers);
 
-const initialStore = { ...combinedReducers };
+const initialStore: ReduxStore = { ...initialStoreMock };
 
 function makeStore(initialState = initialStore) {
   return createStore(
