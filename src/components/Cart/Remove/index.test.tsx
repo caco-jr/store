@@ -8,18 +8,6 @@ import CartRemove from '.';
 import { cartActionType } from '@redux/cart/actionTypes';
 
 describe('CartRemove', () => {
-  it('Should use text defaultProps', () => {
-    const store = mockStore(initialStoreMock);
-
-    const { getByText } = render(
-      <Provider store={store}>
-        <CartRemove id="2" />
-      </Provider>
-    );
-
-    expect(getByText(CartRemove.defaultProps.text)).toBeInTheDocument();
-  });
-
   it('Should remove product from cart', () => {
     const store = mockStore(initialStoreMock);
     const id = '2';

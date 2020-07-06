@@ -49,11 +49,9 @@ $componentClassName: '.c-cart-product';
 
   .c-cart-remove {
     display: none;
-    margin: auto;
     position: absolute;
     right: 20px;
-    top: 0;
-    bottom: 0;
+    top: 20px;
   }
 
   &:hover {

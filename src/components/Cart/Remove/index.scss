@@ -1,0 +1,19 @@
+.c-cart-remove {
+  height: 30px;
+  width: 30px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transform: scale(1);
+  transition: 0.3s all ease;
+
+  &__icon {
+    path {
+      fill: #fff;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.3);
+  }
+}

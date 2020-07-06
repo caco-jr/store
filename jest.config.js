@@ -14,6 +14,7 @@ module.exports = {
     '@interfaces/(.*)': '<rootDir>/src/interfaces/$1',
     '@redux/(.*)': '<rootDir>/src/redux/$1',
     '@hooks/(.*)': '<rootDir>/src/hooks/$1',
+    '@icons/(.*)': '<rootDir>/src/icons/$1',
   },
   collectCoverageFrom: [
     'src/components/**/*.tsx',
