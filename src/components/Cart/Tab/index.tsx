@@ -19,24 +19,24 @@ const CartTab: FunctionComponent<Props> = ({}) => {
         isVisible ? 'visible' : 'hidden'
       }`}
     >
-      <header>
+      <header className={`${componentClassName}__header`}>
         <CartToggleTab mode="dark" />
 
-        <span>Sacola</span>
-
-        <section
-          className={`${componentClassName}__content`}
-          data-testid="cart-tab-content"
-        >
-          {items.length > 0 ? (
-            items.map((item, index) => <CartProduct {...item} key={index} />)
-          ) : (
-            <span className={`${componentClassName}__empty-bag`}>
-              Nenhum item adicionado no carrinho
-            </span>
-          )}
-        </section>
+        <span className={`${componentClassName}__header-title`}>Sacola</span>
       </header>
+
+      <section
+        className={`${componentClassName}__body`}
+        data-testid="cart-tab-content"
+      >
+        {items.length > 0 ? (
+          items.map((item, index) => <CartProduct {...item} key={index} />)
+        ) : (
+          <span className={`${componentClassName}__empty-bag`}>
+            Nenhum item adicionado no carrinho
+          </span>
+        )}
+      </section>
     </section>
   );
 };
