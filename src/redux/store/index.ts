@@ -1,6 +1,5 @@
 import { useMemo } from 'react';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
 import logger from 'redux-logger';
 
 import { cartReducer } from '@redux/cart/reducer';
@@ -10,12 +9,17 @@ import { ReduxStore } from './interface';
 const combinedReducers = combineReducers({ cart: cartReducer });
 const initialStore: ReduxStore = { ...initialStoreMock };
 
+const bindMiddleware = (middleware) => {
+  if (process.env.NODE_ENV !== 'production') {
+    const { composeWithDevTools } = require('redux-devtools-extension');
+    return composeWithDevTools(applyMiddleware(...middleware));
+  }
+
+  return applyMiddleware(...middleware);
+};
+
 function makeStore(initialState: ReduxStore = initialStore) {
-  return createStore(
-    combinedReducers,
-    initialState,
-    composeWithDevTools(applyMiddleware(logger))
-  );
+  return createStore(combinedReducers, initialState, bindMiddleware([logger]));
 }
 
 let store;
