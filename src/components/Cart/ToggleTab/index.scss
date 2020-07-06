@@ -1,19 +1,31 @@
 $componentClassName: '.c-cart-toggle-tab';
 
 #{$componentClassName} {
-  width: 32px;
   background: transparent;
   border: none;
   cursor: pointer;
   position: relative;
   transform: scale(1);
   transition: 0.3s all ease;
+  display: inline-flex;
+  align-items: center;
 
   &--dark {
     #{$componentClassName} {
       &__icon path {
         fill: #fff;
       }
+    }
+  }
+
+  &__icon {
+    &--back {
+      margin-right: 10px;
+    }
+
+    &--cart {
+      width: 32px;
+      height: 32px;
     }
   }
 

@@ -5,6 +5,7 @@ import './index.scss';
 import { toggleCartTab } from '@redux/cart/actions';
 import { ReduxStore } from '@redux/store/interface';
 import CartIcon from '@icons/Cart';
+import BackIcon from '@icons/Back';
 
 type Props = {
   mode?: 'dark' | 'light';
@@ -22,7 +23,17 @@ const CartToggleTab: FunctionComponent<Props> = ({ mode }) => {
       className={`${componentClassName} ${componentClassName}--${mode}`}
       onClick={() => dispatch(toggleCartTab())}
     >
-      <CartIcon className={`${componentClassName}__icon`} />
+      {isVisible && (
+        <BackIcon
+          width="16"
+          height="16"
+          className={`${componentClassName}__icon ${componentClassName}__icon--back`}
+        />
+      )}
+
+      <CartIcon
+        className={`${componentClassName}__icon  ${componentClassName}__icon--cart`}
+      />
 
       <span className={`${componentClassName}__length`}>{items.length}</span>
     </button>
