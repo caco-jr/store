@@ -4,6 +4,7 @@ import './index.scss';
 import CartRemove from '@components/Cart/Remove';
 import { FeaturedMedia } from '@interfaces/store';
 import { getPriceObject } from '@utils/price';
+import { buildImageURI } from '@utils/URIs/image';
 
 type Props = {
   id: number;
@@ -31,7 +32,7 @@ const CartProduct: FunctionComponent<Props> = ({
       <figure className={`${componentClassName}__figure`}>
         <img
           className={`${componentClassName}__image`}
-          src={featuredMedia.baseURI}
+          src={buildImageURI(featuredMedia.baseURI, { width: 80 })}
         />
       </figure>
 

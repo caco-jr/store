@@ -4,10 +4,18 @@ import '@testing-library/jest-dom/extend-expect';
 
 import ProductCard from './index';
 import { mockStoreData } from 'src/__mocks__/api/data';
+import { buildImageURI } from '@utils/URIs/image';
 
 const mockCardProps = { ...mockStoreData.products[0] };
 
 describe('Card content checks', () => {
+  it('Should have correct path for image', () => {
+    const { container } = render(<ProductCard {...mockCardProps} />);
+    const imageURI = buildImageURI(mockCardProps.featuredMedia.baseURI);
+
+    expect(container.querySelector('img')).toHaveAttribute('src', imageURI);
+  });
+
   it('Should have title', () => {
     const { getByText } = render(<ProductCard {...mockCardProps} />);
 

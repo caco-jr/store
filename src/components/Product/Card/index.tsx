@@ -5,6 +5,7 @@ import './index.scss';
 import { getPriceObject, getPrettyPriceFormat } from '@utils/price';
 import { getProductURI } from '@utils/URIs/pages';
 import { FeaturedMedia } from '@interfaces/store';
+import { buildImageURI } from '@utils/URIs/image';
 
 type Props = {
   id: number;
@@ -35,7 +36,7 @@ const ProductCard: FunctionComponent<Props> = ({
         <a>
           <figure className={`${componentClassName}__figure`}>
             <img
-              src={featuredMedia.baseURI}
+              src={buildImageURI(featuredMedia.baseURI)}
               className={`${componentClassName}__image`}
             />
           </figure>
