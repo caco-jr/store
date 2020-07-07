@@ -9,35 +9,6 @@ import { mockStoreData } from 'src/__mocks__/api/data';
 import { ReduxStore } from '@redux/store/interface';
 
 describe('Cart Tab content checks', () => {
-  it('Should have className modifier for hidden', () => {
-    const store = mockStore(initialStoreMock);
-
-    const { container } = render(
-      <Provider store={store}>
-        <CartTab />
-      </Provider>
-    );
-
-    expect(container.firstChild).toHaveClass('c-cart-tab--hidden');
-  });
-
-  it('Should have className modifier for visible', () => {
-    const initialState = {
-      ...initialStoreMock,
-      cart: { ...initialStoreMock.cart, isVisible: true },
-    };
-
-    const store = mockStore(initialState);
-
-    const { container } = render(
-      <Provider store={store}>
-        <CartTab />
-      </Provider>
-    );
-
-    expect(container.firstChild).toHaveClass('c-cart-tab--visible');
-  });
-
   it('Should have feedback for empty cart', () => {
     const store = mockStore(initialStoreMock);
 
