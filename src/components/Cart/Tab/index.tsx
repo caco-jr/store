@@ -5,11 +5,16 @@ import styles from './index.module.scss';
 import CartToggleTab from '@components/Cart/ToggleTab';
 import CartProduct from '@components/Cart/Product';
 import { ReduxStore } from '@redux/store/interface';
+import { getPriceObject } from '@utils/price';
 
 type Props = {};
 
 const CartTab: FunctionComponent<Props> = ({}) => {
   const { isVisible, items } = useSelector((state: ReduxStore) => state.cart);
+
+  const { priceInteger, priceFraction } = getPriceObject(
+    items.reduce((accumulator, current) => current.price + accumulator, 0)
+  );
 
   return (
     <section
@@ -32,6 +37,30 @@ const CartTab: FunctionComponent<Props> = ({}) => {
           </span>
         )}
       </section>
+
+      {items.length && (
+        <section className={styles['cart-total-price']}>
+          <span className={styles['price-text']}>Subtotal</span>
+
+          <div className={styles['price']}>
+            <span className={styles['currency-format']}>R$</span>
+
+            <span
+              className={styles['price-integer']}
+              data-testid="price-integer"
+            >
+              {priceInteger}
+            </span>
+
+            <span
+              className={styles['price-fraction']}
+              data-testid="price-fraction"
+            >
+              ,{priceFraction}
+            </span>
+          </div>
+        </section>
+      )}
     </section>
   );
 };

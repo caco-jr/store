@@ -39,3 +39,27 @@
   padding: 0 15px;
   margin-top: 100px;
 }
+
+.cart-total-price {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.price-text {
+  color: var(--complementary-color-03);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.currency-format,
+.price-fraction,
+.price-integer {
+  color: var(--primary-color);
+  font-size: var(--title);
+}
+
+.price-integer {
+  font-weight: var(--title-weight);
+  margin-left: 4px;
+}
