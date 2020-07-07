@@ -18,7 +18,7 @@ export const getPriceObject = (price: number): priceObject => {
   }
 
   const priceSplit = `${price.toFixed(2)}`.split('.');
-  return buildPriceObject(priceSplit[0], priceSplit[1]?.padEnd(2, '0') || '00');
+  return buildPriceObject(priceSplit[0], priceSplit[1] || '00');
 };
 
 export const getPrettyPriceFormat = (
