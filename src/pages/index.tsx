@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react';
-// import { GetStaticProps } from 'next';
+import { GetStaticProps } from 'next';
 
 import Layout from '@components/Layout';
-// import { getProductsAPI } from '@services/api';
+import { getProductsAPI } from '@services/api';
 import { Store } from '@interfaces/store';
 import ProductList from '@components/Product/List';
 import ProductCard from '@components/Product/Card';
@@ -21,14 +21,14 @@ const IndexPage: FunctionComponent<Props> = ({ store }) => (
   </Layout>
 );
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   const response = await getProductsAPI();
+export const getStaticProps: GetStaticProps = async () => {
+  const response = await getProductsAPI();
 
-//   return {
-//     props: {
-//       store: response,
-//     },
-//   };
-// };
+  return {
+    props: {
+      store: response,
+    },
+  };
+};
 
 export default IndexPage;

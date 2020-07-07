@@ -5,7 +5,7 @@ let BASE_URI: string;
 if (process.env.NODE_ENV !== 'production') {
   BASE_URI = 'http://localhost:3000/api';
 } else {
-  BASE_URI = 'https://store-rho.vercel.app/api';
+  BASE_URI = 'https://store.cacojr.vercel.app/api';
 }
 
 function CheckError(response: Response) {
