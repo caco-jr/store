@@ -25,7 +25,7 @@ describe('Cart addition', () => {
     expect(getByText(CartAdd.defaultProps.text)).toBeInTheDocument();
   });
 
-  it('Should add product to cart', () => {
+  it('Should add product to cart and show feedback', () => {
     const store = mockStore(initialStoreMock);
     const product = mockStoreData.products[0];
 
@@ -39,7 +39,8 @@ describe('Cart addition', () => {
 
     const actions = store.getActions();
     const expectedPayload = { type: cartActionType.ADD_TO_CART, product };
+    const togglePayload = { type: cartActionType.TOGGLE_CART_TAB };
 
-    expect(actions).toEqual([expectedPayload]);
+    expect(actions).toEqual([expectedPayload, togglePayload]);
   });
 });
