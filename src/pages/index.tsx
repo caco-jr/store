@@ -14,21 +14,21 @@ type Props = {
 const IndexPage: FunctionComponent<Props> = ({ store }) => (
   <Layout title="Home">
     <ProductList>
-      {store.products.map((product) => (
+      {store?.products.map((product) => (
         <ProductCard {...product} key={product.id} />
       ))}
     </ProductList>
   </Layout>
 );
 
-export const getStaticProps: GetStaticProps = async () => {
-  const response = await getProductsAPI();
+// export const getStaticProps: GetStaticProps = async () => {
+//   const response = await getProductsAPI();
 
-  return {
-    props: {
-      store: response,
-    },
-  };
-};
+//   return {
+//     props: {
+//       store: response,
+//     },
+//   };
+// };
 
 export default IndexPage;
