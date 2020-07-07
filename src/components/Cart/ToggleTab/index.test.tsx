@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { Provider } from 'react-redux';
 
 import CartToggleTab from '.';
-import { initialStoreMock, mockStore } from '@redux/store/mock';
+import { initialStoreMock, mockStore } from 'src/__mocks__/redux/store';
 import { cartActionType } from '@redux/cart/actionTypes';
 
 describe('Button Cart', () => {

@@ -3,7 +3,7 @@ import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { Provider } from 'react-redux';
 
-import { mockStore, initialStoreMock } from '@redux/store/mock';
+import { mockStore, initialStoreMock } from 'src/__mocks__/redux/store';
 import CartRemove from '.';
 import { cartActionType } from '@redux/cart/actionTypes';
 

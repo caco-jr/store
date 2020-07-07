@@ -1,13 +1,8 @@
 import { useMemo } from 'react';
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 
-import { cartReducer } from '@redux/cart/reducer';
-import { initialStoreMock } from './mock';
-import { ReduxStore } from './interface';
-
-const combinedReducers = combineReducers({ cart: cartReducer });
-const initialStore: ReduxStore = { ...initialStoreMock };
+import persistedReducer from './persist';
 
 const bindMiddleware = (middleware) => {
   if (process.env.NODE_ENV !== 'production') {
@@ -18,8 +13,8 @@ const bindMiddleware = (middleware) => {
   return applyMiddleware(...middleware);
 };
 
-function makeStore(initialState: ReduxStore = initialStore) {
-  return createStore(combinedReducers, initialState, bindMiddleware([logger]));
+function makeStore(initialState) {
+  return createStore(persistedReducer, initialState, bindMiddleware([logger]));
 }
 
 let store;

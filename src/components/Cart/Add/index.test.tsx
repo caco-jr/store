@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/extend-expect';
 import { Provider } from 'react-redux';
 
 import CartAdd from '.';
-import { mockStore, initialStoreMock } from '@redux/store/mock';
+import { mockStore, initialStoreMock } from 'src/__mocks__/redux/store';
 import { cartActionType } from '@redux/cart/actionTypes';
 import { mockStoreData } from 'src/__mocks__/api/data';
 
