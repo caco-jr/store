@@ -8,6 +8,7 @@ import { Product } from '@interfaces/store';
 import { getProductAPI, getProductsAPI } from '@services/api';
 import CartAdd from '@components/Cart/Add';
 import { getPrettyPriceFormat } from '@utils/price/index';
+import { buildImageURI } from '../../utils/URIs/image/index';
 
 interface Props {
   response?: Product;
@@ -28,14 +29,17 @@ const ProductPage: FunctionComponent<Props> = ({ errors, response }) => {
   return (
     <Layout title={`${title}`}>
       <section className={`container`}>
-        <h1 className={styles['title']}>{title}</h1>
-
         <section className={styles['wrapper']}>
           <figure className={styles['figure']}>
-            <img className={styles['image']} src={featuredMedia.baseURI} />
+            <img
+              className={styles['image']}
+              src={buildImageURI(featuredMedia.baseURI, { width: 450 })}
+            />
           </figure>
 
           <section className={styles['content']}>
+            <h1 className={styles['title']}>{title}</h1>
+
             <span className={styles['description']}>{description}</span>
 
             <span className={styles['price']}>

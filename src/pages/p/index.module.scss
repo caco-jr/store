@@ -2,7 +2,7 @@
   font-weight: var(--title-weight);
   font-size: var(--title-xl);
   position: relative;
-  margin-bottom: 50px;
+  margin: 0 0 30px;
 
   &::after {
     content: '';
@@ -18,7 +18,7 @@
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: 450px 1fr;
   gap: 30px;
 }
 
@@ -32,6 +32,18 @@
   margin: 0 0 30px;
   font-size: var(--text-lg);
   font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .figure {
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 480px) {
