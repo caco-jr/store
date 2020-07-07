@@ -1,11 +1,11 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
+// import { GetStaticPaths, GetStaticProps } from 'next';
 import { FunctionComponent } from 'react';
 
 import styles from './index.module.scss';
 import Layout from '@components/Layout';
 import { STORE_NAME } from '@utils/strings';
 import { Product } from '@interfaces/store';
-import { getProductAPI, getProductsAPI } from '@services/api';
+// import { getProductAPI, getProductsAPI } from '@services/api';
 import CartAdd from '@components/Cart/Add';
 import { getPrettyPriceFormat } from '@utils/price/index';
 import { buildImageURI } from '../../utils/URIs/image/index';
