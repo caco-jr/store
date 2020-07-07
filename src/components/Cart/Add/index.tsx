@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import styles from './index.module.scss';
 import { addToCart } from '@redux/cart/actions';
+import { toggleCartTab } from '@redux/cart/actions';
 
 type Props = {
   text?: string;
@@ -17,7 +18,10 @@ const CartAdd: FunctionComponent<Props> = ({ text, product }) => {
     <button
       type="button"
       className={styles['c-cart-add']}
-      onClick={() => dispatch(addToCart(product))}
+      onClick={() => {
+        dispatch(addToCart(product));
+        dispatch(toggleCartTab());
+      }}
     >
       {text}
     </button>

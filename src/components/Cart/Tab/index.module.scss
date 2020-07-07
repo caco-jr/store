@@ -10,6 +10,7 @@
   transform: translateX(100%);
   transition: 0.3s all ease;
   z-index: 9;
+  overflow-y: auto;
 
   &.m-visible {
     transform: translateX(0);
@@ -29,6 +30,12 @@
     color: #fff;
     margin-left: 30px;
   }
+}
+
+.body {
+  max-height: 500px;
+  overflow-y: auto;
+  border: 1px solid #313135;
 }
 
 .empty-bag {
