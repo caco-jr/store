@@ -1,6 +1,7 @@
 import React, { ReactNode, FunctionComponent } from 'react';
 import Head from 'next/head';
 
+import styles from './index.module.scss';
 import Header from '@components/Header';
 import { STORE_NAME } from '@utils/strings';
 import CartTab from '@components/Cart/Tab';
@@ -102,7 +103,7 @@ const Layout: FunctionComponent<Props> = ({ children, title }: Props) => (
 
     <CartTab />
 
-    <main>{children}</main>
+    <main className={styles['main']}>{children}</main>
   </>
 );
 
