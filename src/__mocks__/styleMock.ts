@@ -1,1 +1,1 @@
-module.exports = 'identity-obj-proxy';
+export default 'identity-obj-proxy';
