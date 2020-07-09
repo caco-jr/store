@@ -5,6 +5,7 @@ import styles from './index.module.scss';
 import Header from '@components/Header';
 import { STORE_NAME } from '@utils/strings';
 import CartTab from '@components/Cart/Tab';
+import Footer from '@components/Footer';
 
 type Props = {
   children?: ReactNode;
@@ -104,6 +105,8 @@ const Layout: FunctionComponent<Props> = ({ children, title }: Props) => (
     <CartTab />
 
     <main className={styles['main']}>{children}</main>
+
+    <Footer />
   </>
 );
 
