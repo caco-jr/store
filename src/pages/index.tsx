@@ -12,7 +12,7 @@ type Props = {
 };
 
 const IndexPage: FunctionComponent<Props> = ({ store }) => (
-  <Layout title="Home">
+  <Layout>
     <ProductList>
       {store?.products.map((product) => (
         <ProductCard {...product} key={product.id} />
