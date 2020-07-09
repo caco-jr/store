@@ -5,9 +5,9 @@ module.exports = {
   collectCoverage: true,
   moduleNameMapper: {
     'src/(.*)': '<rootDir>/src/$1',
-    '\\.(css|less|sass|scss)$': '<rootDir>/src/__mocks__/styleMock.ts',
+    '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
-      '<rootDir>/src/__mocks__/fileMock.ts',
+      'test-file-stub',
     '@components/(.*)': '<rootDir>/src/components/$1',
     '@pages/(.*)': '<rootDir>/src/pages/$1',
     '@utils/(.*)': '<rootDir>/src/utils/$1',
