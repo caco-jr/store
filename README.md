@@ -53,6 +53,7 @@ yarn coverage
 O projeto ainda tem alguns detalhes para finalizar por completo.
 
 - [ ] Simular uma compra
+- [ ] Melhorar URI da página de produto
 - [ ] Agrupar itens iguais do carrinho
 - [ ] Atingir 100% da [`cobertura de testes`](#Testes)
 - [ ] Fazer lazy loading do componente `CartTab`
