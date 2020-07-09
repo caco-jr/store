@@ -20,9 +20,9 @@
 }
 
 .c-header {
-  background-color: var(--complementary-color-01);
+  background-color: var(--secondary-color);
   margin-bottom: 50px;
-  border-bottom: 4px solid var(--secondary-color);
+  border-bottom: 4px solid var(--primary-color);
 }
 
 .wrapper {
@@ -36,6 +36,7 @@
   font-weight: 700;
   text-transform: uppercase;
   font-size: var(--title-lg);
+  color: var(--primary-color);
   cursor: pointer;
 
   &:hover {

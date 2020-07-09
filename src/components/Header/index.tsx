@@ -16,7 +16,7 @@ const Header: FunctionComponent<Props> = ({}) => {
           <span className={styles['store-name']}>{STORE_NAME}</span>
         </Link>
 
-        <CartToggleTab />
+        <CartToggleTab mode="dark" />
       </section>
     </header>
   );
