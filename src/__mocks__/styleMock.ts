@@ -1,2 +1,1 @@
-// @ts-ignore
-module.exports = {};
+module.exports = 'identity-obj-proxy';
