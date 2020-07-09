@@ -1,6 +1,6 @@
 # [`Testtini Store`](https://store.cacojr.vercel.app/)
 
-Exemplo de loja virtual feita com Next.js + Typescript + Redux
+Exemplo de loja virtual feita com [Next.js](https://nextjs.org/) + [Typescript](https://www.typescriptlang.org/) + [Redux](https://redux.js.org/)
 
 ## Manual
 
@@ -22,9 +22,12 @@ Para ver o projeto em localhost basta fazer o comando:
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
 ```
+
+E então abra no browser:
+`http://localhost:3000`
 
 ### Testes
 
