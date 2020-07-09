@@ -21,6 +21,23 @@ describe('Cart Tab content checks', () => {
     expect(container.firstChild).toHaveClass('m-hidden');
   });
 
+  it('Should have className for visible', () => {
+    const initialStore: ReduxStore = {
+      ...initialStoreMock,
+      cart: { ...initialStoreMock.cart, isVisible: true },
+    };
+
+    const store = mockStore(initialStore);
+
+    const { container } = render(
+      <Provider store={store}>
+        <CartTab />
+      </Provider>
+    );
+
+    expect(container.firstChild).toHaveClass('m-visible');
+  });
+
   it('Should have feedback for empty cart', () => {
     const store = mockStore(initialStoreMock);
 

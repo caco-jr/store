@@ -13,7 +13,7 @@ const CartTab: FunctionComponent<Props> = ({}) => {
   const { isVisible, items } = useSelector((state: ReduxStore) => state.cart);
 
   const { priceInteger, priceFraction } = getPriceObject(
-    items.reduce((accumulator, current) => current.price + accumulator, 0)
+    items?.reduce((accumulator, current) => current.price + accumulator, 0)
   );
 
   return (
@@ -29,7 +29,7 @@ const CartTab: FunctionComponent<Props> = ({}) => {
       </header>
 
       <section className={styles['body']} data-testid="cart-tab-content">
-        {items.length > 0 ? (
+        {items?.length > 0 ? (
           items.map((item, index) => <CartProduct {...item} key={index} />)
         ) : (
           <span className={styles['empty-bag']}>
@@ -38,7 +38,7 @@ const CartTab: FunctionComponent<Props> = ({}) => {
         )}
       </section>
 
-      {items.length && (
+      {items?.length && (
         <section className={styles['cart-total-price']}>
           <span className={styles['price-text']}>Subtotal</span>
 
