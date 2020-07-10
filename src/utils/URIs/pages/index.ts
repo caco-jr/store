@@ -1,3 +1,5 @@
+import { slugify } from '@utils/strings';
+
 type RouteObject = {
   href: string;
   as: string;
@@ -5,7 +7,7 @@ type RouteObject = {
 
 export const getHomeURI = (): RouteObject => ({ href: '/', as: '/' });
 
-export const getProductURI = (id: string): RouteObject => ({
+export const getProductURI = (id: string, title: string): RouteObject => ({
   href: '/p/[id]',
-  as: `/p/${id}`,
+  as: `/p/${slugify(title)}---${id}`,
 });

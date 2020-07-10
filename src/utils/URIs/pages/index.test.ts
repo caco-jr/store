@@ -6,6 +6,9 @@ describe('URI', () => {
   });
 
   it('Should return URI for Product page', () => {
-    expect(getProductURI('3')).toMatchObject({ href: '/p/[id]', as: '/p/3' });
+    expect(getProductURI('3', 'Camisa Retrô')).toMatchObject({
+      href: '/p/[id]',
+      as: '/p/camisa-retro---3',
+    });
   });
 });
