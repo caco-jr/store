@@ -30,7 +30,7 @@ const ProductCard: FunctionComponent<Props> = ({
 
   return (
     <article className={styles['c-product-card']}>
-      <Link {...getProductURI(`${id}`)}>
+      <Link {...getProductURI(`${id}`, title)}>
         <a>
           <figure className={styles['figure']}>
             <img
@@ -41,7 +41,7 @@ const ProductCard: FunctionComponent<Props> = ({
         </a>
       </Link>
 
-      <Link {...getProductURI(`${id}`)}>
+      <Link {...getProductURI(`${id}`, title)}>
         <a>
           <span className={styles['title']}>{title}</span>
         </a>
