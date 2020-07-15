@@ -12,7 +12,7 @@ describe('Card content checks', () => {
     it('Should have correct path for image', () => {
         const { container } = render(<ProductCard {...mockCardProps} />);
         const imageURI = buildImageURI(mockCardProps.featuredMedia.baseURI, {
-            width: 300,
+            width: 350,
         });
 
         expect(container.querySelector('img')).toHaveAttribute('src', imageURI);
