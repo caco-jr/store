@@ -48,6 +48,16 @@ npm run coverage
 yarn coverage
 ```
 
+### Formatação
+
+Para padronizar a formatação, o [`Prettier`](https://prettier.io/) já está configurado. Caso deseje mudar algum valor padrão, basta alterar no arquivo `.prettierrc`, em seguida rode:
+
+```bash
+npm run format
+# ou
+yarn format
+```
+
 ## Notas
 
 O projeto ainda tem alguns detalhes para finalizar por completo.
