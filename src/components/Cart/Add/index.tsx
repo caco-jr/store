@@ -3,8 +3,7 @@ import { Product } from '@interfaces/store';
 import { useDispatch } from 'react-redux';
 
 import styles from './index.module.scss';
-import { addToCart } from '@redux/cart/actions';
-import { toggleCartTab } from '@redux/cart/actions';
+import { addToCart, toggleCartTab } from '@redux/cart/actions';
 
 type Props = {
     text?: string;

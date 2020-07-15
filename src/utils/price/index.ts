@@ -17,7 +17,7 @@ export const getPriceObject = (price: number): priceObject => {
         return;
     }
 
-    const priceSplit = `${price.toFixed(2)}`.split('.');
+    const priceSplit = price.toFixed(2)?.split('.');
     return buildPriceObject(priceSplit[0], priceSplit[1]);
 };
 
