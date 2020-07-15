@@ -11,7 +11,9 @@ const mockCardProps = { ...mockStoreData.products[0] };
 describe('Card content checks', () => {
     it('Should have correct path for image', () => {
         const { container } = render(<ProductCard {...mockCardProps} />);
-        const imageURI = buildImageURI(mockCardProps.featuredMedia.baseURI);
+        const imageURI = buildImageURI(mockCardProps.featuredMedia.baseURI, {
+            width: 300,
+        });
 
         expect(container.querySelector('img')).toHaveAttribute('src', imageURI);
     });

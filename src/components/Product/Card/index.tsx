@@ -34,7 +34,10 @@ const ProductCard: FunctionComponent<Props> = ({
                 <a>
                     <figure className={styles['figure']}>
                         <img
-                            src={buildImageURI(featuredMedia.baseURI)}
+                            src={buildImageURI(featuredMedia.baseURI, {
+                                width: 300,
+                            })}
+                            alt={title}
                             className={styles['image']}
                         />
                     </figure>
