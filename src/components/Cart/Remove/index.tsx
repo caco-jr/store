@@ -6,26 +6,26 @@ import { removeFromCart } from '@redux/cart/actions';
 import CloseIcon from '@icons/Close';
 
 type Props = {
-  id: string;
-  className?: string;
+    id: string;
+    className?: string;
 };
 
 const CartRemove: FunctionComponent<Props> = ({ id, className }) => {
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-  return (
-    <button
-      type="button"
-      className={`${styles['c-cart-remove']} ${className}`}
-      onClick={() => dispatch(removeFromCart(id))}
-    >
-      <CloseIcon className={styles['icon']} width="16" height="16" />
-    </button>
-  );
+    return (
+        <button
+            type="button"
+            className={`${styles['c-cart-remove']} ${className}`}
+            onClick={() => dispatch(removeFromCart(id))}
+        >
+            <CloseIcon className={styles['icon']} width="16" height="16" />
+        </button>
+    );
 };
 
 CartRemove.defaultProps = {
-  className: '',
+    className: '',
 };
 
 export default CartRemove;

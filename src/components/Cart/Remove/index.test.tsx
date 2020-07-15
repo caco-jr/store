@@ -8,21 +8,21 @@ import CartRemove from '.';
 import { cartActionType } from '@redux/cart/actionTypes';
 
 describe('CartRemove', () => {
-  it('Should remove product from cart', () => {
-    const store = mockStore(initialStoreMock);
-    const id = '2';
+    it('Should remove product from cart', () => {
+        const store = mockStore(initialStoreMock);
+        const id = '2';
 
-    const { getByRole } = render(
-      <Provider store={store}>
-        <CartRemove id={id} />
-      </Provider>
-    );
+        const { getByRole } = render(
+            <Provider store={store}>
+                <CartRemove id={id} />
+            </Provider>
+        );
 
-    fireEvent.click(getByRole('button'));
+        fireEvent.click(getByRole('button'));
 
-    const actions = store.getActions();
-    const expectedPayload = { type: cartActionType.REMOVE_FROM_CART, id };
+        const actions = store.getActions();
+        const expectedPayload = { type: cartActionType.REMOVE_FROM_CART, id };
 
-    expect(actions).toEqual([expectedPayload]);
-  });
+        expect(actions).toEqual([expectedPayload]);
+    });
 });

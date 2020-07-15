@@ -6,15 +6,15 @@ import '@styles/main.scss';
 import { useStore } from '@redux/store';
 
 export default function App({ Component, pageProps }) {
-  const store = useStore(pageProps.initialReduxState);
+    const store = useStore(pageProps.initialReduxState);
 
-  useEffect(() => {
-    persistStore(store);
-  }, []);
+    useEffect(() => {
+        persistStore(store);
+    }, []);
 
-  return (
-    <Provider store={store}>
-      <Component {...pageProps} />
-    </Provider>
-  );
+    return (
+        <Provider store={store}>
+            <Component {...pageProps} />
+        </Provider>
+    );
 }
