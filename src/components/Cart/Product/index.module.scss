@@ -1,72 +1,74 @@
 .c-cart-product {
-  position: relative;
+    position: relative;
 
-  * {
-    color: #fff;
-  }
-
-  &:hover {
-    background-color: var(--dark-secondary-color);
-
-    .wrapper {
-      opacity: 0.4;
+    * {
+        color: #fff;
     }
 
-    .title {
-      text-decoration: line-through;
-    }
+    &:hover {
+        background-color: var(--dark-secondary-color);
 
-    .remove {
-      display: block;
+        .wrapper {
+            opacity: 0.4;
+        }
+
+        .title {
+            text-decoration: line-through;
+        }
+
+        .remove {
+            display: block;
+        }
     }
-  }
 }
 
 .remove {
-  display: none;
-  position: absolute;
-  right: 20px;
-  top: 20px;
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
 }
 
 .wrapper {
-  display: flex;
-  align-items: flex-start;
-  padding: 20px;
-  opacity: 1;
-  transition: 0.3s all ease;
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    opacity: 1;
+    transition: 0.3s all ease;
 }
 
 .figure {
-  margin-right: 20px;
+    margin-right: 20px;
+    width: 80px;
+    height: 80px;
 }
 
 .content {
-  flex: 1;
+    flex: 1;
 }
 
 .title {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 4px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 4px;
 }
 
 .style {
-  display: block;
-  color: #999;
+    display: block;
+    color: #999;
 }
 
 .price {
-  align-self: center;
+    align-self: center;
 }
 
 .currency-format,
 .price-integer,
 .price-fraction {
-  color: var(--primary-color);
+    color: var(--primary-color);
 }
 
 .price-integer {
-  font-weight: 700;
-  margin-left: 6px;
+    font-weight: 700;
+    margin-left: 6px;
 }
