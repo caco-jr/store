@@ -1,65 +1,67 @@
 .c-product-card {
-  a {
-    text-decoration: none;
-  }
-
-  .figure {
-    overflow: hidden;
-    border-radius: var(--border-radius);
-  }
-
-  .image {
-    transform: scale(1);
-    transition: 0.3s all ease;
-  }
-
-  .title {
-    text-align: center;
-    display: block;
-    margin: 10px 0 15px;
-    min-height: 35px;
-  }
-
-  .price {
-    display: block;
-    text-align: center;
-    position: relative;
-
-    &::before {
-      content: '';
-      display: block;
-      width: 20px;
-      height: 2px;
-      background-color: var(--primary-color);
-      border-radius: var(--border-radius);
-      margin: 0 auto;
-      position: absolute;
-      top: -7px;
-      left: 0;
-      right: 0;
+    a {
+        text-decoration: none;
     }
-  }
 
-  .currency-format,
-  .price-fraction {
-    font-size: var(--text-xs);
-  }
+    .figure {
+        overflow: hidden;
+        border-radius: var(--border-radius);
+        min-height: 265px;
+        width: 100%;
+    }
 
-  .price-integer {
-    font-size: var(--title);
-    font-weight: var(--title-weight);
-    margin-left: 4px;
-  }
-
-  .installments {
-    margin-top: 5px;
-    color: var(--light-text-color);
-    text-align: center;
-  }
-
-  &:hover {
     .image {
-      transform: scale(1.1);
+        transform: scale(1);
+        transition: 0.3s all ease;
     }
-  }
+
+    .title {
+        text-align: center;
+        display: block;
+        margin: 10px 0 15px;
+        min-height: 35px;
+    }
+
+    .price {
+        display: block;
+        text-align: center;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: var(--primary-color);
+            border-radius: var(--border-radius);
+            margin: 0 auto;
+            position: absolute;
+            top: -7px;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    .currency-format,
+    .price-fraction {
+        font-size: var(--text-xs);
+    }
+
+    .price-integer {
+        font-size: var(--title);
+        font-weight: var(--title-weight);
+        margin-left: 4px;
+    }
+
+    .installments {
+        margin-top: 5px;
+        color: var(--light-text-color);
+        text-align: center;
+    }
+
+    &:hover {
+        .image {
+            transform: scale(1.1);
+        }
+    }
 }
