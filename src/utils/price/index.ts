@@ -13,8 +13,7 @@ export const buildPriceObject = (
 
 export const getPriceObject = (price: number): priceObject => {
     if (typeof price !== 'number') {
-        console.info('Parameter "price" must be a number');
-        return;
+        throw new Error('Parameter "price" must be a number');
     }
 
     const priceSplit = price.toFixed(2)?.split('.');
@@ -26,8 +25,7 @@ export const getPrettyPriceFormat = (
     currency: 'BRL' | 'USD' | 'EUR'
 ): string => {
     if (typeof price !== 'number') {
-        console.info('Parameter "price" must be a number');
-        return;
+        throw new Error('Parameter "price" must be a number');
     }
 
     return new Intl.NumberFormat('pt', {

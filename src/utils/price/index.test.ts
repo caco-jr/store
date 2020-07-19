@@ -13,9 +13,11 @@ describe('getPriceParts', () => {
         );
     });
 
-    it('Should return undefined for non number', () => {
-        // @ts-ignore
-        expect(getPriceObject('190')).toBeUndefined();
+    it('Should throw error for non number', () => {
+        expect(() => {
+            // @ts-ignore
+            getPriceObject('190');
+        }).toThrowError();
     });
 });
 
@@ -28,8 +30,10 @@ describe('getPrettyPriceFormat', () => {
         );
     });
 
-    it('Should return undefined for non number', () => {
-        // @ts-ignore
-        expect(getPrettyPriceFormat('190.9', 'BRL')).toBeUndefined();
+    it('Should throw error for non number', () => {
+        expect(() => {
+            // @ts-ignore
+            getPrettyPriceFormat('190.9', 'BRL');
+        }).toThrowError();
     });
 });
