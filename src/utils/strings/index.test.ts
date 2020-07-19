@@ -7,10 +7,8 @@ describe('Slugify', () => {
         expect(titleSlugify).toEqual('camisa-liga-retro-holanda-1974-feminino');
     });
 
-    it('Should return empty string from invalid parameter', () => {
+    it('Should throw error for invalid parameter', () => {
         // @ts-ignore
-        const titleSlugify = slugify(8);
-
-        expect(titleSlugify).toEqual('');
+        expect(() => slugify(8)).toThrowError();
     });
 });
