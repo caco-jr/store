@@ -34,6 +34,7 @@ const CartProduct: FunctionComponent<Props> = ({
             src={buildImageURI(featuredMedia.baseURI, {
               width: 80,
             })}
+            loading="lazy"
           />
         </figure>
 

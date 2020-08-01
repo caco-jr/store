@@ -39,6 +39,7 @@ const ProductCard: FunctionComponent<Props> = ({
               })}
               alt={title}
               className={styles['image']}
+              loading="lazy"
             />
           </figure>
         </a>
