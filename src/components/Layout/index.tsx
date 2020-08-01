@@ -98,6 +98,12 @@ const Layout: FunctionComponent<Props> = ({ children, title }: Props) => (
         rel="stylesheet"
         href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
       />
+
+      <script
+        async
+        src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.15/pwacompat.min.js"
+        crossOrigin="anonymous"
+      />
     </Head>
 
     <Header />
