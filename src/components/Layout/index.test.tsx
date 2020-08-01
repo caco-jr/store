@@ -1,11 +1,16 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
+import preloadAll from 'jest-next-dynamic';
 
 import Layout from '.';
 import { initialStoreMock, mockStore } from 'src/__mocks__/redux/store';
 
 describe('LayoutComponent', () => {
+  beforeAll(async () => {
+    await preloadAll();
+  });
+
   it('Should have main tag', () => {
     const store = mockStore(initialStoreMock);
 
