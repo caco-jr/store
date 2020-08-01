@@ -37,6 +37,7 @@
     "babel-plugin-transform-dynamic-import": "^2.1.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.2.2",
+    "jest-fetch-mock": "^3.0.3",
     "jest-next-dynamic": "^1.0.1",
     "prettier": "^2.0.5",
     "react-test-renderer": "^16.13.1",

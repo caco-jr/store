@@ -3,6 +3,7 @@ module.exports = {
   bail: 1,
   clearMocks: true,
   collectCoverage: true,
+  setupFilesAfterEnv: ['<rootDir>/setupTests.js'],
   moduleNameMapper: {
     'src/(.*)': '<rootDir>/src/$1',
     '\\.(css|less|sass|scss)$': 'identity-obj-proxy',
