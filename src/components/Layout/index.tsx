@@ -1,11 +1,13 @@
 import React, { ReactNode, FunctionComponent } from 'react';
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
 
 import styles from './index.module.scss';
 import Header from '@components/Header';
 import { STORE_NAME } from '@utils/strings';
-import CartTab from '@components/Cart/Tab';
 import Footer from '@components/Footer';
+
+const DynamicCartTab = dynamic(() => import('@components/Cart/Tab'));
 
 type Props = {
   children?: ReactNode;
@@ -108,7 +110,7 @@ const Layout: FunctionComponent<Props> = ({ children, title }: Props) => (
 
     <Header />
 
-    <CartTab />
+    <DynamicCartTab />
 
     <main className={styles['main']}>{children}</main>
 
