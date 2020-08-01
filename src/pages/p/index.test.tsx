@@ -66,4 +66,23 @@ describe('getStaticProps', () => {
       },
     });
   });
+
+  it('Should handle error on API', async () => {
+    const errorFeedback =
+      'invalid json response body at  reason: Unexpected token E in JSON at position 0';
+
+    // @ts-ignore
+    fetch.mockResponseOnce(new Error());
+
+    const response = await getStaticProps({
+      // @ts-ignore
+      id: '',
+    });
+
+    expect(response).toMatchObject({
+      props: {
+        errors: errorFeedback,
+      },
+    });
+  });
 });
