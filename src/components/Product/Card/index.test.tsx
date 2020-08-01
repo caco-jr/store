@@ -1,6 +1,5 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 
 import ProductCard from './index';
 import { mockStoreData } from 'src/__mocks__/api/data';
