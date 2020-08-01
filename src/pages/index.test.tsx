@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import preloadAll from 'jest-next-dynamic';
 
@@ -17,11 +17,25 @@ describe('Home page', () => {
 
     const { container } = render(
       <Provider store={store}>
-        <IndexPage store={store} />
+        <IndexPage store={null} />
       </Provider>
     );
 
     expect(container.firstChild).toBeInTheDocument();
+  });
+
+  it('Should render ProductCards', async () => {
+    const store = mockStore(initialStoreMock);
+
+    const { container } = render(
+      <Provider store={store}>
+        <IndexPage store={mockStoreData} />
+      </Provider>
+    );
+
+    expect(container.querySelectorAll('.c-product-card')).toHaveLength(
+      mockStoreData.products.length
+    );
   });
 });
 
