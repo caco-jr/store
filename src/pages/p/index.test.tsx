@@ -5,7 +5,8 @@ import preloadAll from 'jest-next-dynamic';
 
 import { mockStoreData } from 'src/__mocks__/api/data';
 import { mockStore, initialStoreMock } from 'src/__mocks__/redux/store';
-import ProductPage from './[id]';
+import ProductPage, { getStaticProps } from './[id]';
+import { slugify } from '@utils/strings';
 
 describe('Product page', () => {
   beforeAll(async () => {
@@ -37,5 +38,32 @@ describe('Product page', () => {
 
     expect(queryByText(/Error: Without props test/i)).not.toBeInTheDocument();
     expect(queryByText(productMock.title)).toBeInTheDocument();
+  });
+});
+
+describe('getStaticProps', () => {
+  beforeEach(() => {
+    // @ts-ignore
+    fetch.resetMocks();
+  });
+
+  it('Should call product API', async () => {
+    const productMock = {
+      ...mockStoreData.products[0],
+    };
+
+    // @ts-ignore
+    fetch.mockResponseOnce(JSON.stringify(productMock));
+
+    const response = await getStaticProps({
+      // @ts-ignore
+      id: slugify(productMock.title),
+    });
+
+    expect(response).toMatchObject({
+      props: {
+        response: productMock,
+      },
+    });
   });
 });
