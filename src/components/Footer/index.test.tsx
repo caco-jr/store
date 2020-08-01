@@ -5,9 +5,9 @@ import '@testing-library/jest-dom/extend-expect';
 import Footer from '.';
 
 describe('Footer', () => {
-    it('Should render links', () => {
-        const { container } = render(<Footer />);
+  it('Should render links', () => {
+    const { container } = render(<Footer />);
 
-        expect(container.querySelectorAll('a')).toHaveLength(2);
-    });
+    expect(container.querySelectorAll('a')).toHaveLength(2);
+  });
 });

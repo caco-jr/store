@@ -62,12 +62,12 @@ yarn format
 
 O projeto ainda tem alguns detalhes para finalizar por completo.
 
--   [ ] Simular uma compra
--   [x] Melhorar URI da página de produto
--   [ ] Agrupar itens iguais do carrinho
--   [ ] Atingir 100% da [`cobertura de testes`](#Testes)
--   [ ] Fazer lazy loading do componente `CartTab`
--   [ ] Escolha de variações do produto.
--   [ ] Inserir informações adicionais na página do produto.
--   [ ] Melhorar o PWA
--   [ ] Criação do [`Swagger`](https://swagger.io/) para documentar API.
+- [ ] Simular uma compra
+- [x] Melhorar URI da página de produto
+- [ ] Agrupar itens iguais do carrinho
+- [ ] Atingir 100% da [`cobertura de testes`](#Testes)
+- [ ] Fazer lazy loading do componente `CartTab`
+- [ ] Escolha de variações do produto.
+- [ ] Inserir informações adicionais na página do produto.
+- [ ] Melhorar o PWA
+- [ ] Criação do [`Swagger`](https://swagger.io/) para documentar API.

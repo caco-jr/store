@@ -9,59 +9,59 @@ import { cartActionType } from '@redux/cart/actionTypes';
 import { ReduxStore } from '@redux/store/interface';
 
 describe('Button Cart', () => {
-    it('should render length', () => {
-        const store = mockStore(initialStoreMock);
+  it('should render length', () => {
+    const store = mockStore(initialStoreMock);
 
-        const { getByText } = render(
-            <Provider store={store}>
-                <CartToggleTab />
-            </Provider>
-        );
+    const { getByText } = render(
+      <Provider store={store}>
+        <CartToggleTab />
+      </Provider>
+    );
 
-        expect(getByText('0')).toBeInTheDocument();
+    expect(getByText('0')).toBeInTheDocument();
+  });
+
+  it('Should dispatch TOGGLE_CART_TAB', () => {
+    const store = mockStore(initialStoreMock);
+
+    const { getByRole } = render(
+      <Provider store={store}>
+        <CartToggleTab />
+      </Provider>
+    );
+
+    fireEvent.click(getByRole('button'));
+    const actions = store.getActions();
+    const expectedPayload = { type: cartActionType.TOGGLE_CART_TAB };
+
+    expect(actions).toEqual([expectedPayload]);
+  });
+
+  it('Should not show back icon', () => {
+    const store = mockStore(initialStoreMock);
+
+    const { container } = render(
+      <Provider store={store}>
+        <CartToggleTab />
+      </Provider>
+    );
+
+    expect(container.querySelectorAll('svg')).toHaveLength(1);
+  });
+
+  it('Should show back icon', () => {
+    const storeData: ReduxStore = Object.assign({}, initialStoreMock, {
+      cart: { ...initialStoreMock.cart, isVisible: true },
     });
 
-    it('Should dispatch TOGGLE_CART_TAB', () => {
-        const store = mockStore(initialStoreMock);
+    const store = mockStore(storeData);
 
-        const { getByRole } = render(
-            <Provider store={store}>
-                <CartToggleTab />
-            </Provider>
-        );
+    const { container } = render(
+      <Provider store={store}>
+        <CartToggleTab />
+      </Provider>
+    );
 
-        fireEvent.click(getByRole('button'));
-        const actions = store.getActions();
-        const expectedPayload = { type: cartActionType.TOGGLE_CART_TAB };
-
-        expect(actions).toEqual([expectedPayload]);
-    });
-
-    it('Should not show back icon', () => {
-        const store = mockStore(initialStoreMock);
-
-        const { container } = render(
-            <Provider store={store}>
-                <CartToggleTab />
-            </Provider>
-        );
-
-        expect(container.querySelectorAll('svg')).toHaveLength(1);
-    });
-
-    it('Should show back icon', () => {
-        const storeData: ReduxStore = Object.assign({}, initialStoreMock, {
-            cart: { ...initialStoreMock.cart, isVisible: true },
-        });
-
-        const store = mockStore(storeData);
-
-        const { container } = render(
-            <Provider store={store}>
-                <CartToggleTab />
-            </Provider>
-        );
-
-        expect(container.querySelectorAll('svg')).toHaveLength(2);
-    });
+    expect(container.querySelectorAll('svg')).toHaveLength(2);
+  });
 });

@@ -10,61 +10,59 @@ import { getPriceObject } from '@utils/price';
 type Props = {};
 
 const CartTab: FunctionComponent<Props> = ({}) => {
-    const { isVisible, items } = useSelector((state: ReduxStore) => state.cart);
+  const { isVisible, items } = useSelector((state: ReduxStore) => state.cart);
 
-    const { priceInteger, priceFraction } = getPriceObject(
-        items?.reduce((accumulator, current) => current.price + accumulator, 0)
-    );
+  const { priceInteger, priceFraction } = getPriceObject(
+    items?.reduce((accumulator, current) => current.price + accumulator, 0)
+  );
 
-    return (
-        <section
-            className={`${styles['c-cart-tab']} ${
-                isVisible ? styles['m-visible'] : styles['m-hidden']
-            }`}
-        >
-            <header className={styles['header']}>
-                <CartToggleTab mode="dark" />
+  return (
+    <section
+      className={`${styles['c-cart-tab']} ${
+        isVisible ? styles['m-visible'] : styles['m-hidden']
+      }`}
+    >
+      <header className={styles['header']}>
+        <CartToggleTab mode="dark" />
 
-                <span className={styles['header-title']}>Sacola</span>
-            </header>
+        <span className={styles['header-title']}>Sacola</span>
+      </header>
 
-            <section className={styles['body']} data-testid="cart-tab-content">
-                {items?.length > 0 ? (
-                    items.map((item, index) => (
-                        <CartProduct {...item} key={index} />
-                    ))
-                ) : (
-                    <span className={styles['empty-bag']}>
-                        Nenhum item adicionado no carrinho
-                    </span>
-                )}
-            </section>
+      <section className={styles['body']} data-testid="cart-tab-content">
+        {items?.length > 0 ? (
+          items.map((item, index) => <CartProduct {...item} key={index} />)
+        ) : (
+          <span className={styles['empty-bag']}>
+            Nenhum item adicionado no carrinho
+          </span>
+        )}
+      </section>
 
-            {items?.length && (
-                <section className={styles['cart-total-price']}>
-                    <span className={styles['price-text']}>Subtotal</span>
+      {items?.length && (
+        <section className={styles['cart-total-price']}>
+          <span className={styles['price-text']}>Subtotal</span>
 
-                    <div className={styles['price']}>
-                        <span className={styles['currency-format']}>R$</span>
+          <div className={styles['price']}>
+            <span className={styles['currency-format']}>R$</span>
 
-                        <span
-                            className={styles['price-integer']}
-                            data-testid="price-integer"
-                        >
-                            {priceInteger}
-                        </span>
+            <span
+              className={styles['price-integer']}
+              data-testid="price-integer"
+            >
+              {priceInteger}
+            </span>
 
-                        <span
-                            className={styles['price-fraction']}
-                            data-testid="price-fraction"
-                        >
-                            ,{priceFraction}
-                        </span>
-                    </div>
-                </section>
-            )}
+            <span
+              className={styles['price-fraction']}
+              data-testid="price-fraction"
+            >
+              ,{priceFraction}
+            </span>
+          </div>
         </section>
-    );
+      )}
+    </section>
+  );
 };
 
 export default CartTab;

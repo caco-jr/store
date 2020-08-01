@@ -6,29 +6,29 @@ import styles from './index.module.scss';
 import { addToCart, toggleCartTab } from '@redux/cart/actions';
 
 type Props = {
-    text?: string;
-    product: Product;
+  text?: string;
+  product: Product;
 };
 
 const CartAdd: FunctionComponent<Props> = ({ text, product }) => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    return (
-        <button
-            type="button"
-            className={styles['c-cart-add']}
-            onClick={() => {
-                dispatch(addToCart(product));
-                dispatch(toggleCartTab());
-            }}
-        >
-            {text}
-        </button>
-    );
+  return (
+    <button
+      type="button"
+      className={styles['c-cart-add']}
+      onClick={() => {
+        dispatch(addToCart(product));
+        dispatch(toggleCartTab());
+      }}
+    >
+      {text}
+    </button>
+  );
 };
 
 CartAdd.defaultProps = {
-    text: 'Adicionar ao carrinho',
+  text: 'Adicionar ao carrinho',
 };
 
 export default CartAdd;

@@ -8,27 +8,27 @@ import ProductList from '@components/Product/List';
 import ProductCard from '@components/Product/Card';
 
 type Props = {
-    store: Store;
+  store: Store;
 };
 
 const IndexPage: FunctionComponent<Props> = ({ store }) => (
-    <Layout>
-        <ProductList>
-            {store?.products.map(product => (
-                <ProductCard {...product} key={product.id} />
-            ))}
-        </ProductList>
-    </Layout>
+  <Layout>
+    <ProductList>
+      {store?.products.map(product => (
+        <ProductCard {...product} key={product.id} />
+      ))}
+    </ProductList>
+  </Layout>
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-    const response = await getProductsAPI();
+  const response = await getProductsAPI();
 
-    return {
-        props: {
-            store: response,
-        },
-    };
+  return {
+    props: {
+      store: response,
+    },
+  };
 };
 
 export default IndexPage;

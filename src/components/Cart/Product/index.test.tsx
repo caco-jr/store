@@ -11,30 +11,30 @@ import { buildImageURI } from '@utils/URIs/image';
 const cardProps = { ...mockStoreData.products[0] };
 
 describe('Card Horizontal', () => {
-    it('should have title', () => {
-        const store = mockStore(initialStoreMock);
+  it('should have title', () => {
+    const store = mockStore(initialStoreMock);
 
-        const { getByText } = render(
-            <Provider store={store}>
-                <CartProduct {...cardProps} />
-            </Provider>
-        );
+    const { getByText } = render(
+      <Provider store={store}>
+        <CartProduct {...cardProps} />
+      </Provider>
+    );
 
-        expect(getByText(cardProps.title)).toBeInTheDocument();
+    expect(getByText(cardProps.title)).toBeInTheDocument();
+  });
+
+  it('Should have correct image URI', () => {
+    const store = mockStore(initialStoreMock);
+
+    const { container } = render(
+      <Provider store={store}>
+        <CartProduct {...cardProps} />
+      </Provider>
+    );
+
+    const imageURI = buildImageURI(cardProps.featuredMedia.baseURI, {
+      width: 80,
     });
-
-    it('Should have correct image URI', () => {
-        const store = mockStore(initialStoreMock);
-
-        const { container } = render(
-            <Provider store={store}>
-                <CartProduct {...cardProps} />
-            </Provider>
-        );
-
-        const imageURI = buildImageURI(cardProps.featuredMedia.baseURI, {
-            width: 80,
-        });
-        expect(container.querySelector('img')).toHaveAttribute('src', imageURI);
-    });
+    expect(container.querySelector('img')).toHaveAttribute('src', imageURI);
+  });
 });
