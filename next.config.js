@@ -15,8 +15,8 @@ const nextOfflineConfig = {
     [{ url: '/', revision: handleHash() }].concat(manifest),
   workboxOpts: {
     swDest: process.env.NEXT_EXPORT
-      ? '/service-worker.js'
-      : '/static/service-worker.js',
+      ? 'service-worker.js'
+      : 'static/service-worker.js',
     runtimeCaching: [
       {
         urlPattern: /^https?.*/,
