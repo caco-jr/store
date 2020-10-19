@@ -13,7 +13,7 @@
   "dependencies": {
     "@types/react-redux": "^7.1.9",
     "@types/redux-logger": "^3.0.8",
-    "next": "9.5.5",
+    "next": "9.5.4",
     "next-offline": "^5.0.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
