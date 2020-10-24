@@ -5,7 +5,7 @@ import preloadAll from 'jest-next-dynamic';
 
 import { mockStoreData } from 'src/__mocks__/api/data';
 import { mockStore, initialStoreMock } from 'src/__mocks__/redux/store';
-import IndexPage, { getStaticProps } from '.';
+import HomePage from '.';
 
 describe('Home page', () => {
   beforeAll(async () => {
@@ -17,7 +17,7 @@ describe('Home page', () => {
 
     const { container } = render(
       <Provider store={store}>
-        <IndexPage store={null} />
+        <HomePage store={null} />
       </Provider>
     );
 
@@ -29,31 +29,12 @@ describe('Home page', () => {
 
     const { container } = render(
       <Provider store={store}>
-        <IndexPage store={mockStoreData} />
+        <HomePage store={mockStoreData} />
       </Provider>
     );
 
     expect(container.querySelectorAll('.c-product-card')).toHaveLength(
       mockStoreData.products.length
     );
-  });
-});
-
-describe('getStaticProps', () => {
-  beforeEach(() => {
-    // @ts-ignore
-    fetch.resetMocks();
-  });
-
-  it('Should call products API', async () => {
-    // @ts-ignore
-    fetch.mockResponseOnce(JSON.stringify(mockStoreData));
-
-    const response = await getStaticProps(IndexPage.contextTypes);
-    expect(response).toMatchObject({
-      props: {
-        store: mockStoreData,
-      },
-    });
   });
 });
