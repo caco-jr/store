@@ -11,6 +11,7 @@ module.exports = {
       'test-file-stub',
     '@components/(.*)': '<rootDir>/src/components/$1',
     '@pages/(.*)': '<rootDir>/src/pages/$1',
+    '@views/(.*)': '<rootDir>/src/pages/$1',
     '@utils/(.*)': '<rootDir>/src/utils/$1',
     '@services/(.*)': '<rootDir>/src/services/$1',
     '@interfaces/(.*)': '<rootDir>/src/interfaces/$1',

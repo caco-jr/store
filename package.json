@@ -36,7 +36,6 @@
     "babel-jest": "^26.6.1",
     "babel-plugin-transform-dynamic-import": "^2.1.0",
     "identity-obj-proxy": "^3.0.0",
-    "ignore-loader": "^0.1.2",
     "jest": "^26.6.1",
     "jest-fetch-mock": "^3.0.3",
     "jest-next-dynamic": "^1.0.1",
